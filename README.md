@@ -20,4 +20,5 @@ Final Devlog goes here.
 
 
 ## Open-source assets
-- Cite any external assets used here!
+- [Stylized House Interior](https://assetstore.unity.com/packages/3d/environments/stylized-house-interior-224331)
+- [Toon Fox](https://assetstore.unity.com/packages/3d/characters/animals/toon-fox-183005)
