@@ -8,7 +8,7 @@ public class DialogueNode : ScriptableObject
     // Variables
     //---------------------------------------------------------------------
     [Tooltip("The line of dialogue the NPC says in this node.")]
-    public string[] Lines;
+    public string Line;
 
     [Tooltip("[Optional] The dialogue options for the player's response, and what node each response leads to.")]
     public List<PlayerReply> ReplyOptions;

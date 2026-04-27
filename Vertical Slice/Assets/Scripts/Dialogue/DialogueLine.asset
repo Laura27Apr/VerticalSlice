@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
   m_Name: DialogueLine
   m_EditorClassIdentifier: 
-  Lines:
-  - Hi! I'm so glad to finally meet you!
+  Line: Hi! I am so glad that I finally meet you!
   ReplyOptions: []
