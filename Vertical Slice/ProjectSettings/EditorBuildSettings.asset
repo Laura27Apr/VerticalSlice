@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/URP_Stylized_House_Interior.unity
+    guid: 507bd0c244c332d42899c1956aa66521
   m_configObjects: {}
