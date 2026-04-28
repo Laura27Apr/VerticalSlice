@@ -10,4 +10,7 @@ public class PlayerReply
     //---------------------------------------------------------------------
     [Inspectable] public string line;
     [Inspectable] public DialogueNode nextNode;
+    [Inspectable] public int favorChange;
+    [Inspectable] public int requiredFavor;
+    [Inspectable] public bool endDialogue;
 }

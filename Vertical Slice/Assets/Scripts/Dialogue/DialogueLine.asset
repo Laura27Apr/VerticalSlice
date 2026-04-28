@@ -18,5 +18,11 @@ MonoBehaviour:
   ReplyOptions:
   - line: Who are you?
     nextNode: {fileID: 11400000, guid: 9afb9297f19f8dc41987564a08333c5d, type: 2}
+    favorChange: 0
+    requiredFavor: 0
+    endDialogue: 0
   - line: Why do you say that?
     nextNode: {fileID: 11400000, guid: 8bf8966fe10c466409c02581dac45542, type: 2}
+    favorChange: 0
+    requiredFavor: 0
+    endDialogue: 0

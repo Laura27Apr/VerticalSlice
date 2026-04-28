@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: 1.a_DialogueLine
+  m_EditorClassIdentifier: 
+  Lines:
+  - That is a good question!
+  - To be honest, I do not know who I really am.
+  - The only thing I know is that your mom brought me to life.
+  - Do you miss her?
+  ReplyOptions:
+  - line: Not really.
+    nextNode: {fileID: 11400000, guid: 462a725dddd06ae43b1240619afb3991, type: 2}
+    favorChange: -1
+    requiredFavor: 0
+  - line: Of course...
+    nextNode: {fileID: 11400000, guid: f237537cf49a38945be875a3f27049ed, type: 2}
+    favorChange: 1
+    requiredFavor: 0

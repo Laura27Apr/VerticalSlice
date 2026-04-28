@@ -21,19 +21,26 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject replyButtonPrefab;
     [SerializeField] private Transform replyParent;
+    [SerializeField] private Image favorImage;
+    [SerializeField] private GameObject dialogueUI;
 
     private DialogueNode currentNode;
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
+    private int favorLevel = 0;
+
+    public bool isInDialogue = false;
 
     public void StartDialogue()
     {
         Debug.Log("Start Dialogue");
 
+        isInDialogue = true;
         currentNode = startLine;
         currentLineIndex = 0;
 
         ShowCurrentLine();
+        CustomEvent.Trigger(gameObject, "EnterDialogue");
     }
 
     public void ShowCurrentLine()
@@ -76,6 +83,7 @@ public class DialogueAdvancer : MonoBehaviour
 
         if (currentNode.ReplyOptions == null || currentNode.ReplyOptions.Count == 0)
         {
+            isInDialogue = false;
             return;
         }
 
@@ -83,6 +91,12 @@ public class DialogueAdvancer : MonoBehaviour
         for (int i = 0; i < currentNode.ReplyOptions.Count; i++)
         {
             PlayerReply reply = currentNode.ReplyOptions[i];
+
+            if (favorLevel < reply.requiredFavor)
+            {
+                continue;
+            }
+
             GameObject button = Instantiate(replyButtonPrefab, replyParent);
 
             button.GetComponentInChildren<TMP_Text>().text = reply.line;
@@ -100,6 +114,17 @@ public class DialogueAdvancer : MonoBehaviour
     {
         isWaitingForReply = false;
 
+        PlayerReply reply = currentNode.ReplyOptions[index];
+
+        favorLevel += currentNode.ReplyOptions[index].favorChange;
+        UpdateFavorUI();
+
+        if (reply.endDialogue)
+        {
+            EndDialogue();
+            return;
+        }
+
         currentNode = currentNode.ReplyOptions[index].nextNode;
         currentLineIndex = 0;
 
@@ -109,5 +134,41 @@ public class DialogueAdvancer : MonoBehaviour
         }
 
         ShowCurrentLine();
+    }
+
+    public void UpdateFavorUI()
+    {
+        if (favorLevel > 0)
+        {
+            favorImage.color = new Color(1f, 0.71f, 0.76f); 
+        }
+        else if (favorLevel < 0)
+        {
+            favorImage.color = new Color(0.7f, 0.7f, 0.7f);
+        }
+        else
+        {
+            favorImage.color = new Color(1f, 1f, 1f);
+        }
+    }
+
+    public void EndDialogue()
+    {
+        Debug.Log("Dialogue End");
+
+        isInDialogue = false;
+        dialogueUI.SetActive(false);
+
+        currentNode = null;
+        currentLineIndex = 0;
+        isWaitingForReply = false;
+
+        foreach (Transform child in replyParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        dialogueText.text = "";
+        CustomEvent.Trigger(gameObject, "ExitDialogue");
     }
 }
