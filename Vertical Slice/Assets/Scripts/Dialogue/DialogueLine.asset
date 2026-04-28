@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
   m_Name: DialogueLine
   m_EditorClassIdentifier: 
-  Line: Hi! I am so glad that I finally meet you!
-  ReplyOptions: []
+  Lines:
+  - Hi! I am so glad that I finally meet you!
+  - I have been waiting for you for a really long time!
+  ReplyOptions:
+  - line: Who are you?
+    nextNode: {fileID: 11400000, guid: 9afb9297f19f8dc41987564a08333c5d, type: 2}
+  - line: Why do you say that?
+    nextNode: {fileID: 11400000, guid: 8bf8966fe10c466409c02581dac45542, type: 2}
