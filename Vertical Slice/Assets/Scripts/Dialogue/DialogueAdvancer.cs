@@ -144,7 +144,7 @@ public class DialogueAdvancer : MonoBehaviour
         }
         else if (favorLevel < 0)
         {
-            favorImage.color = new Color(0.7f, 0.7f, 0.7f);
+            favorImage.color = new Color(0.4f, 0.4f, 0.4f);
         }
         else
         {

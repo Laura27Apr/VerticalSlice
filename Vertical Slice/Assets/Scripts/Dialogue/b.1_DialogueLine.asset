@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: b.1_DialogueLine
   m_EditorClassIdentifier: 
   Lines:
-  - You can start by paying attention that seems uncommon.
+  - She would be happy if she knows that...
+  - Try to look around!
   ReplyOptions:
-  - line: Thanks!
+  - line: Could you guide me?
+    nextNode: {fileID: 11400000, guid: cd05f90db93b6bb4cbb9f3c3f036e10f, type: 2}
+    favorChange: 0
+    requiredFavor: 1
+    endDialogue: 0
+  - line: Okay.
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -1
     endDialogue: 1

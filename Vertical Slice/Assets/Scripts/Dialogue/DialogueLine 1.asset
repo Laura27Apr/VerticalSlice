@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lines:
   - I am happy to!
+  - Maybe you could start at the living room.
   ReplyOptions:
   - line: Go
     nextNode: {fileID: 0}

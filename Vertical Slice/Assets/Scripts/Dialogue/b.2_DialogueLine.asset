@@ -15,7 +15,7 @@ MonoBehaviour:
   Lines:
   - Then just have a look around.
   ReplyOptions:
-  - line: Could you help me?
+  - line: Could you guide me?
     nextNode: {fileID: 11400000, guid: cd05f90db93b6bb4cbb9f3c3f036e10f, type: 2}
     favorChange: 0
     requiredFavor: 1
