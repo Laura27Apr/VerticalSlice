@@ -6,7 +6,7 @@ I used Visual Scripting to implement the basic logic that allows the player to c
 ### 2
 In the breakdown for this update, I added an NPC state machine to better organize the interaction and dialogue flow between the player and NPCs in the game. The state machine assigns three states to the NPC: Calm, Alert, and Dialogue. The NPC starts in the Alert state. When the distance between the NPC and the player is less than three, the NPC enters the Calm state. Clicking on the NPC at this point triggers the Dialogue state. After the dialogue ends, the NPC returns to the Calm state. I also assigned different animations to each state to make the NPC's behavior more complete.
 
-In this system, the dialogue state is bound to the dialogue UI, ensuring that the dialogue UI only appears when the NPC is in the dialogue state. This allows players to freely explore when not in a dialogue. Additionally, the dialogue UI that appears during the dialogue state works with the friendship level UI. Based on the friendship level value, it determines if the NPC will help the player during future exploration.
+In this system, the Dialogue state is responsible for calling the StartDialogue method in C# to initiate the conversation. It is also bound to the dialogue UI, ensuring that the UI only appears when the NPC is in the dialogue state. This prevents the UI from interfering with the player's exploration outside of dialogue. Additionally, the dialogue UI that appears during the dialogue state works with the friendship level UI. Based on the friendship level value, it determines if the NPC will help the player during future exploration.
 
 ## Milestone 2 Devlog
 Milestone 2 Devlog goes here.
