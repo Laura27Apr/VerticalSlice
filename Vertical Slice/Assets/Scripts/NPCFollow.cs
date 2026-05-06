@@ -7,10 +7,12 @@ public class NPCFollow : MonoBehaviour
     [SerializeField] private float followDistance = 2f;
     
     private NavMeshAgent agent;
+    private bool followStart = false;
 
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.isStopped = true;
     }
 
     public void Update()
@@ -20,7 +22,7 @@ public class NPCFollow : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (!isInDialogue && distance > followDistance)
+        if (followStart && !isInDialogue && distance > followDistance)
         {
             agent.isStopped = false;
             agent.SetDestination(player.position);
@@ -33,5 +35,10 @@ public class NPCFollow : MonoBehaviour
 
             Debug.Log("NPC stopped");
         }
+    }
+    public void EnableFollow()
+    {
+        followStart = true;
+        Debug.Log("NPC follow unlocked");
     }
 }

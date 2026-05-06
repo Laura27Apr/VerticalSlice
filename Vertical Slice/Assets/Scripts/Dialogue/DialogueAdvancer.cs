@@ -23,11 +23,13 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private Transform replyParent;
     [SerializeField] private Image favorImage;
     [SerializeField] private GameObject dialogueUI;
+    [SerializeField] private NPCFollow npcFollow;
 
     private DialogueNode currentNode;
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
     private int favorLevel = 0;
+
 
     public bool isInDialogue = false;
 
@@ -169,6 +171,9 @@ public class DialogueAdvancer : MonoBehaviour
         }
 
         dialogueText.text = "";
+
+        npcFollow.EnableFollow();
+
         CustomEvent.Trigger(gameObject, "ExitDialogue");
     }
 }
