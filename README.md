@@ -13,13 +13,29 @@ In this system, the Dialogue state is responsible for calling the StartDialogue 
 ## Milestone 2 Devlog
 ### 1
 1. Create a basic opening cutscene using Timeline.
+
+
 	a. Open the Timeline window in Unity, then create a new empty GameObject and name it OpeningTimeline. Create a Timeline asset for it. Open the Inspector for OpeningTimeline and verify that PlayableDirector is present;
+	
+	
 	b. In the OpeningTimeline, create an OpeningCanvas and an OpeningText to display the opening text. Check the Game view to make sure the text appears on the screen;
+	
+	
 	c. Adjust the display duration of the Activation Track so that OpeningText appears at 0 seconds and disappears a few seconds later. Set the Post-playback State of the Activation Track to Inactive so that the text remains hidden after the cutscene ends.Run a test of the game to confirm that the text does not reappear after the Timeline has finished playing.
+
+
 2. Create a cutscene that transitions from an opening shot to the standard game perspective. 
+	
+	
 	a. Create a new camera, name it OpeningSceneCamera, and place it where you want it. Check the Camera Preview or Game view to make sure the camera view shows the area of the story;
+	
+	
 	b. In the Camera settings of OpeningSceneCamera, open Rendering and set its Priority higher than that of the Main Camera. This ensures that when OpeningSceneCamera is active, it will appear on top of the Main Camera. Run the game to test and confirm that when OpeningSceneCamera is active, the Game View displays the opening scene;
+
+	
 	c. Set the Post-playback State of the OpeningSceneCamera to Inactive to ensure that it remains off after the cutscene ends. Run the game to test and confirm that the view switches to the Main Camera's gameplay perspective after the cutscene ends.
+	
+ 
 	d. Under OpeningCanvas, create a semi-transparent background image to serve as the text background. Also adjust the color and transparency of the text background. Run the game to test it and ensure that the text is clear and legible while still allowing the opening scene behind it to be visible.
 
 
