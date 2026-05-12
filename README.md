@@ -33,7 +33,7 @@ In this system, the Dialogue state is responsible for calling the StartDialogue 
 	b. In the Camera settings of OpeningSceneCamera, open Rendering and set its Priority higher than that of the Main Camera. This ensures that when OpeningSceneCamera is active, it will appear on top of the Main Camera. Run the game to test and confirm that when OpeningSceneCamera is active, the Game View displays the opening scene;
 
 	
-	c. Set the Post-playback State of the OpeningSceneCamera to Inactive to ensure that it remains off after the cutscene ends. Run the game to test and confirm that the view switches to the Main Camera's gameplay perspective after the cutscene ends.
+	c. Set the Post-playback State of the OpeningSceneCamera to Inactive to ensure that it remains off after the cutscene ends. Run the game to test and confirm that the view switches to the Main Camera's gameplay perspective after the cutscene ends;
 	
  
 	d. Under OpeningCanvas, create a semi-transparent background image to serve as the text background. Also adjust the color and transparency of the text background. Run the game to test it and ensure that the text is clear and legible while still allowing the opening scene behind it to be visible.
