@@ -18127,7 +18127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &714376645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28908,6 +28908,7 @@ MonoBehaviour:
   favorImage: {fileID: 837446020}
   dialogueUI: {fileID: 1018762018}
   npcFollow: {fileID: 96427561}
+  friendshipLevelUI: {fileID: 714376644}
   isInDialogue: 0
 --- !u!1001 &1154791313
 PrefabInstance:

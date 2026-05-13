@@ -24,13 +24,13 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private Image favorImage;
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private NPCFollow npcFollow;
+    [SerializeField] private GameObject friendshipLevelUI;
 
     private DialogueNode currentNode;
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
     private int favorLevel = 0;
-
-
+    private bool firstDialogueFinished = false;
     public bool isInDialogue = false;
 
     public void StartDialogue()
@@ -175,5 +175,11 @@ public class DialogueAdvancer : MonoBehaviour
         npcFollow.EnableFollow();
 
         CustomEvent.Trigger(gameObject, "ExitDialogue");
+
+        if (!firstDialogueFinished)
+        {
+            firstDialogueFinished = true;
+            friendshipLevelUI.SetActive(true);
+        }
     }
 }
