@@ -4401,7 +4401,19 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 878573077091459170, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1831786577}
+  - key: {fileID: -355939423652614770, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1635206437}
+  - key: {fileID: 8386264258931769721, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1227285806}
+  - key: {fileID: -6507025117720187846, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1786673761}
+  - key: {fileID: -2719388827034557167, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1635206442}
+  - key: {fileID: -5663026593980888819, guid: 536fdbedbe644da4b82e6624630b73bd, type: 2}
+    value: {fileID: 1646040187}
   m_ExposedReferences:
     m_References:
     - 407579effc9ebed4db489674c2990dbe: {fileID: 0}
@@ -20146,6 +20158,7 @@ RectTransform:
   m_Children:
   - {fileID: 1646040188}
   - {fileID: 1831786578}
+  - {fileID: 1635206441}
   m_Father: {fileID: 200645516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -32327,9 +32340,7 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: -4281591085216109311, guid: 872984979963efa43a6570e83cd12b55, type: 2}
-    value: {fileID: 1227285806}
+  m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1227285808
@@ -42973,6 +42984,134 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1635186379}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1635206437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1635206441}
+  - component: {fileID: 1635206440}
+  - component: {fileID: 1635206439}
+  - component: {fileID: 1635206438}
+  - component: {fileID: 1635206443}
+  - component: {fileID: 1635206442}
+  m_Layer: 5
+  m_Name: TransitionUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1635206438
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 843f5683ad4793e47bfa9a9ff7590977, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &1635206439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1635206440
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_CullTransparentMesh: 1
+--- !u!224 &1635206441
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 786932540}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 3.2666016, y: -0.000091552734}
+  m_SizeDelta: {x: 27.0395, y: 18.8659}
+  m_Pivot: {x: 0.5, y: 0.49999994}
+--- !u!95 &1635206442
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6e24eb601fa21841b0410ff4477cb83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &1635206443
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635206437}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1635747717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43428,7 +43567,7 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 6427083316630541215, guid: 843f5683ad4793e47bfa9a9ff7590977, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1646040187}
   m_ExposedReferences:
     m_References: []
@@ -49273,9 +49412,7 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 3617873919832133858, guid: 960f255cd46fab94dbaee8bcf1042eae, type: 2}
-    value: {fileID: 1831786577}
+  m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
 --- !u!114 &1831786580
