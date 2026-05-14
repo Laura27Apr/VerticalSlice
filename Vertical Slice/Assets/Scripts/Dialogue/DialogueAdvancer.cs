@@ -18,6 +18,7 @@ public class DialogueAdvancer : MonoBehaviour
     }
 
     [SerializeField] private DialogueNode startLine;
+    [SerializeField] private DialogueNode defaultLine;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject replyButtonPrefab;
     [SerializeField] private Transform replyParent;
@@ -27,16 +28,35 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private GameObject friendshipLevelUI;
     [SerializeField] private GameObject foxBox;
     [SerializeField] private GameObject playerBox;
+    [SerializeField] private GameObject gameController; 
 
     private DialogueNode currentNode;
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
     private bool isShowingPlayerLine = false;
-
     private int favorLevel = 0;
     private bool firstDialogueFinished = false;
     public bool isInDialogue = false;
 
+    
+    private void Update()
+    {
+        if (!isInDialogue)
+        {
+            return;
+        }
+
+        if (isWaitingForReply)
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ShowCurrentLine();
+        }
+    }
+    
     public void StartDialogue()
     {
         Debug.Log("Start Dialogue");
@@ -47,14 +67,22 @@ public class DialogueAdvancer : MonoBehaviour
         isWaitingForReply = false;
         isShowingPlayerLine = false;
 
-        currentNode = startLine;
+        if (!firstDialogueFinished)
+        {
+            currentNode = startLine;
+        }
+        else
+        {
+            currentNode = defaultLine;
+        }
+
         currentLineIndex = 0;
 
         ClearReplies();
         SetDialogueBox(false);
         ShowCurrentLine();
 
-        CustomEvent.Trigger(gameObject, "EnterDialogue");
+        CustomEvent.Trigger(gameController, "EnterDialogue");
     }
 
     public void ShowCurrentLine()
@@ -79,16 +107,6 @@ public class DialogueAdvancer : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (!isInDialogue) return;
-        if (isWaitingForReply) return;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShowCurrentLine();
-        }
-    }
 
     public void ShowReplies()
     {
@@ -208,7 +226,7 @@ public class DialogueAdvancer : MonoBehaviour
             npcFollow.EnableFollow();
         }
 
-        CustomEvent.Trigger(gameObject, "ExitDialogue");
+        CustomEvent.Trigger(gameController, "ExitDialogue");
 
         if (!firstDialogueFinished)
         {

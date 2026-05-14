@@ -15,17 +15,10 @@ MonoBehaviour:
   Lines:
   - "Stay vigilant about everything\u2014"
   - That is exactly the kind of personality your mother lacks.
-  - "That\u2019s exactly the kind of personality your mother lacks."
   ReplyOptions:
-  - line: Definitely!
-    nextNode: {fileID: 11400000, guid: 3713165e84c3d92418f0f7a4e281bafc, type: 2}
-    favorChange: 1
-    requiredFavor: 0
-    endDialogue: 0
-    playerLine: 
-  - line: Maybe.
+  - line: yeah
     nextNode: {fileID: 11400000, guid: 54f1d8eedb9c8d94fb0f12d5e25bca69, type: 2}
     favorChange: 0
     requiredFavor: 0
-    endDialogue: 0
+    endDialogue: 1
     playerLine: 
