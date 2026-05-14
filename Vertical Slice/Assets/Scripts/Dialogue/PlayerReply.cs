@@ -13,4 +13,5 @@ public class PlayerReply
     [Inspectable] public int favorChange;
     [Inspectable] public int requiredFavor;
     [Inspectable] public bool endDialogue;
+    [Inspectable] public string playerLine;
 }

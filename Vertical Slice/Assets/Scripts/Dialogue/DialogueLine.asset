@@ -15,14 +15,21 @@ MonoBehaviour:
   Lines:
   - Hi! I am so glad that I finally meet you!
   - I have been waiting for you for a really long time!
+  - Ever since the moment your mom brought me to life, I have been waiting for the
+    day you turn 18.
+  - 'Your mom has entrusted me with a task. '
+  - 'She wants me to reveal everything to you. '
+  - And this is about why she left without a word when you were a child.
   ReplyOptions:
-  - line: Who are you?
+  - line: Trust her.
     nextNode: {fileID: 11400000, guid: 9afb9297f19f8dc41987564a08333c5d, type: 2}
     favorChange: 0
     requiredFavor: 0
     endDialogue: 0
-  - line: Why do you say that?
+    playerLine: If you are here to tell me a story about my mom, I will believe you.
+  - line: Question her.
     nextNode: {fileID: 11400000, guid: 8bf8966fe10c466409c02581dac45542, type: 2}
     favorChange: 0
     requiredFavor: 0
     endDialogue: 0
+    playerLine: Why should I believe you?

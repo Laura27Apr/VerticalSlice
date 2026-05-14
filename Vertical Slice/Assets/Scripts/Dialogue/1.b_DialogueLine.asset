@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: 1.b_DialogueLine
   m_EditorClassIdentifier: 
   Lines:
-  - Oh... Because I really have been waiting for you for a long time
-  - I have started waiting since your mom left you.
-  - She told me I could only appear once you were grown up.
-  - She really had a lot to say to you.
-  - Would you like to know?
+  - "Stay vigilant about everything\u2014"
+  - That is exactly the kind of personality your mother lacks.
+  - "That\u2019s exactly the kind of personality your mother lacks."
   ReplyOptions:
   - line: Definitely!
     nextNode: {fileID: 11400000, guid: 3713165e84c3d92418f0f7a4e281bafc, type: 2}
     favorChange: 1
     requiredFavor: 0
     endDialogue: 0
+    playerLine: 
   - line: Maybe.
     nextNode: {fileID: 11400000, guid: 54f1d8eedb9c8d94fb0f12d5e25bca69, type: 2}
     favorChange: 0
     requiredFavor: 0
     endDialogue: 0
+    playerLine: 

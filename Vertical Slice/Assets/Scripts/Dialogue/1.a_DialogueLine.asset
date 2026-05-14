@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: 1.a_DialogueLine
   m_EditorClassIdentifier: 
   Lines:
-  - That is a good question!
-  - To be honest, I do not know who I really am.
-  - The only thing I know is that your mom brought me to life.
-  - Do you miss her?
+  - ...I am sure your mom will be very happy to hear that.
+  - Because as I was being brought into this world, I could clearly feel how much
+    she loved you.
   ReplyOptions:
   - line: Not really.
     nextNode: {fileID: 11400000, guid: 462a725dddd06ae43b1240619afb3991, type: 2}
     favorChange: -1
     requiredFavor: 0
+    endDialogue: 0
+    playerLine: 
   - line: Of course...
     nextNode: {fileID: 11400000, guid: f237537cf49a38945be875a3f27049ed, type: 2}
     favorChange: 1
     requiredFavor: 0
+    endDialogue: 0
+    playerLine: 
