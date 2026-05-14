@@ -2019,6 +2019,27 @@ MonoBehaviour:
   player: {fileID: 1483548657}
   dialogueAdvancer: {fileID: 1154711146}
   interactDistance: 3
+--- !u!135 &96427569
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96427549}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1.1, z: 0.5}
 --- !u!1001 &103909212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55756,6 +55777,36 @@ PrefabInstance:
       propertyPath: _data._objectReferences.Array.data[0]
       value: 
       objectReference: {fileID: 1483548650}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.9738182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.44938287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.51628196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.25238666
+      objectReference: {fileID: 0}
+    - target: {fileID: 4897910285725540064, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: m_Direction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5199430854537665268, guid: fd3120f417c6ba14fb08f77328f2f17e,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -55780,6 +55831,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1550340705650596404, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 96427569}
     - targetCorrespondingSourceObject: {fileID: 1550340705650596404, guid: fd3120f417c6ba14fb08f77328f2f17e,
         type: 3}
       insertIndex: -1
