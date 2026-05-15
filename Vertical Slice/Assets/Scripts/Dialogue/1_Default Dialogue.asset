@@ -16,13 +16,11 @@ MonoBehaviour:
   - 'There are some clues in this room about your mother. '
   - They may provide the answers you have been looking for regarding her sudden departure
     when you were a child.
-  - They may provide the answers you have been looking for regarding her sudden departure
-    when you were a child.
   - You can look around and read the clues.
   ReplyOptions:
   - line: Thanks!
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: 

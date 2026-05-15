@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: b.5
+  m_EditorClassIdentifier: 
+  Lines:
+  - 'Being open to others'' suggestions is a great quality! '
+  - I think you are ready to explore around.
+  - If you come across anything that needs clarification or confirmation, I would
+    be happy to help.
+  ReplyOptions:
+  - line: Guide, please!
+    nextNode: {fileID: 11400000, guid: b3c8e99d73f69694eb2697582704a4bd, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Could you give me some tips on what I should focus on?
+  - line: Okay, thanks!
+    nextNode: {fileID: 0}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 1
+    playerLine: 

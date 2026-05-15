@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  Lines:
+  - Hi! I am so glad that I finally meet you!
+  - I have been waiting for you for a really long time!
+  - Ever since the moment your mom brought me to life, I have been waiting for the
+    day you turn 18.
+  - 'Your mom has entrusted me with a task. '
+  - 'She wants me to reveal everything to you. '
+  - And this is about why she left without a word when you were a child.
+  ReplyOptions:
+  - line: Trust it.
+    nextNode: {fileID: 11400000, guid: 9afb9297f19f8dc41987564a08333c5d, type: 2}
+    favorChange: 0
+    requiredFavor: 0
+    endDialogue: 0
+    playerLine: If you are here to tell me a story about my mom, I will believe you.
+  - line: Question it.
+    nextNode: {fileID: 11400000, guid: 8bf8966fe10c466409c02581dac45542, type: 2}
+    favorChange: 0
+    requiredFavor: 0
+    endDialogue: 0
+    playerLine: Why should I believe you?

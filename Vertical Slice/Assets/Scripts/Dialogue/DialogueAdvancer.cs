@@ -2,6 +2,8 @@
 using Unity.VisualScripting;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class DialogueAdvancer : MonoBehaviour
 {
@@ -14,62 +16,91 @@ public class DialogueAdvancer : MonoBehaviour
             Destroy(this);
             return;
         }
+
         _Instance = this;
     }
 
+    [Header("Dialogue Nodes")]
     [SerializeField] private DialogueNode startLine;
     [SerializeField] private DialogueNode defaultLine;
+    [SerializeField] private DialogueNode afterGiftLine;
+    [SerializeField] private DialogueNode finalTruthLine;
+
+    [Header("UI")]
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject replyButtonPrefab;
     [SerializeField] private Transform replyParent;
     [SerializeField] private Image favorImage;
     [SerializeField] private GameObject dialogueUI;
-    [SerializeField] private NPCFollow npcFollow;
     [SerializeField] private GameObject friendshipLevelUI;
     [SerializeField] private GameObject foxBox;
     [SerializeField] private GameObject playerBox;
-    [SerializeField] private GameObject gameController; 
+
+    [Header("Other Systems")]
+    [SerializeField] private NPCFollow npcFollow;
+    [SerializeField] private GameObject gameController;
+    [SerializeField] private BookInteract bookInteract;
+    [SerializeField] private GiftGroupInteract giftGroupInteract;
+    [SerializeField] private GameObject resetBlackScreen;
+    [SerializeField] private float resetDelay = 1.5f;
 
     private DialogueNode currentNode;
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
     private bool isShowingPlayerLine = false;
     private int favorLevel = 0;
-    private bool firstDialogueFinished = false;
+    private bool friendshipUIShown = false;
+    private int storyStage = 0;
+    private bool isFinalDialoguePlaying = false;
     public bool isInDialogue = false;
 
-    
+    private void Start()
+    {
+        if (friendshipLevelUI != null)
+        {
+            friendshipLevelUI.SetActive(false);
+        }
+    }
+
     private void Update()
     {
-        if (!isInDialogue)
-        {
-            return;
-        }
-
-        if (isWaitingForReply)
-        {
-            return;
-        }
+        if (!isInDialogue) return;
+        if (isWaitingForReply) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             ShowCurrentLine();
         }
     }
-    
+
     public void StartDialogue()
     {
         Debug.Log("Start Dialogue");
 
         dialogueUI.SetActive(true);
 
+        if (!friendshipUIShown && friendshipLevelUI != null)
+        {
+            friendshipLevelUI.SetActive(true);
+            friendshipUIShown = true;
+        }
+
         isInDialogue = true;
         isWaitingForReply = false;
         isShowingPlayerLine = false;
 
-        if (!firstDialogueFinished)
+        if (storyStage == 0)
         {
             currentNode = startLine;
+        }
+        else if (storyStage == 2)
+        {
+            currentNode = afterGiftLine;
+        }
+        else if (storyStage == 3)
+        {
+            currentNode = finalTruthLine;
+            isFinalDialoguePlaying = true;
         }
         else
         {
@@ -82,7 +113,26 @@ public class DialogueAdvancer : MonoBehaviour
         SetDialogueBox(false);
         ShowCurrentLine();
 
-        CustomEvent.Trigger(gameController, "EnterDialogue");
+        if (gameController != null)
+        {
+            CustomEvent.Trigger(gameController, "EnterDialogue");
+        }
+    }
+
+    public void FoundGift()
+    {
+        if (storyStage < 2)
+        {
+            storyStage = 2;
+        }
+    }
+
+    public void FoundDesk()
+    {
+        if (storyStage < 3)
+        {
+            storyStage = 3;
+        }
     }
 
     public void ShowCurrentLine()
@@ -106,7 +156,6 @@ public class DialogueAdvancer : MonoBehaviour
             ShowReplies();
         }
     }
-
 
     public void ShowReplies()
     {
@@ -192,6 +241,8 @@ public class DialogueAdvancer : MonoBehaviour
 
     public void UpdateFavorUI()
     {
+        if (favorImage == null) return;
+
         if (favorLevel > 0)
         {
             favorImage.color = new Color(1f, 0.71f, 0.76f);
@@ -226,16 +277,44 @@ public class DialogueAdvancer : MonoBehaviour
             npcFollow.EnableFollow();
         }
 
-        CustomEvent.Trigger(gameController, "ExitDialogue");
-
-        if (!firstDialogueFinished)
+        if (gameController != null)
         {
-            firstDialogueFinished = true;
-
-            if (friendshipLevelUI != null)
-            {
-                friendshipLevelUI.SetActive(true);
-            }
+            CustomEvent.Trigger(gameController, "ExitDialogue");
         }
+
+        if (storyStage == 0)
+        {
+            storyStage = 1;
+
+            if (bookInteract != null)
+            {
+                bookInteract.UnlockBookInteract();
+            }
+
+            if (giftGroupInteract != null)
+            {
+                giftGroupInteract.UnlockGiftGroupInteract();
+            }
+
+           
+        }
+
+        if (isFinalDialoguePlaying)
+        {
+            StartCoroutine(ResetGameAfterFinalDialogue());
+            return;
+        }
+    }
+
+    private IEnumerator ResetGameAfterFinalDialogue()
+    {
+        if (resetBlackScreen != null)
+        {
+            resetBlackScreen.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(resetDelay);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

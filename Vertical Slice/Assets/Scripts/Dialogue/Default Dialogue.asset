@@ -18,12 +18,12 @@ MonoBehaviour:
   - line: Yes...
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: I forgot what I was supposed to do. Could you tell me again?
   - line: No.
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: I am doing great, thanks!

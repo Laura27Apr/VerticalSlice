@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: a.2
+  m_EditorClassIdentifier: 
+  Lines:
+  - The reason of this is something you will have to search for here on your own.
+  - Feel free to look around for now.
+  - If you come across anything that needs clarification or confirmation, I would
+    be happy to help.
+  ReplyOptions:
+  - line: Guide, please!
+    nextNode: {fileID: 11400000, guid: 3f619204a978de846b89f7821a89f385, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Could you give me some tips on what I should focus on?
+  - line: Okay, thanks.
+    nextNode: {fileID: 0}
+    favorChange: 0
+    requiredFavor: -1
+    endDialogue: 1
+    playerLine: 

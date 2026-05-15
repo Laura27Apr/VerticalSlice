@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Unity.VisualScripting;
 
 public class BookInteract : MonoBehaviour
 {
@@ -8,33 +9,50 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private float interactDistance = 2f;
 
     private bool playerInteract;
+    private bool firstDialogueFinished = false;
+    private bool bookAlreadyRead = false;
 
     public void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
         playerInteract = distance <= interactDistance;
+        promptUI.SetActive(firstDialogueFinished && playerInteract && !readUI.activeSelf);
 
-        promptUI.SetActive(playerInteract && !readUI.activeSelf);
-
-        if (playerInteract && Input.GetKeyDown(KeyCode.F))
+        if (firstDialogueFinished && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
+
+            if (!bookAlreadyRead)
+            {
+                bookAlreadyRead = true;
+                DialogueAdvancer._Instance.FoundDesk();
+            }
+
+            Variables.ActiveScene.Set("isReading", true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             promptUI.SetActive(false);
-            Debug.Log("F pressed");
         }
 
         if (readUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             readUI.SetActive(false);
 
-            if (playerInteract)
+            Variables.ActiveScene.Set("isReading", false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            if (firstDialogueFinished && playerInteract)
             {
                 promptUI.SetActive(true);
             }
-
         }
     }
 
-   
+    public void UnlockBookInteract()
+    {
+        firstDialogueFinished = true;
+    }
 }

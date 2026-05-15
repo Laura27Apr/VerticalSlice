@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: 1.a
+  m_EditorClassIdentifier: 
+  Lines:
+  - ...I am sure your mom will be very happy to hear that.
+  - Because as I was being brought into this world, I could clearly feel how much
+    she loved you.
+  - 'During those years when she could not be with you, she always felt deeply guilty. '
+  - She has always loved and missed you, without ever stopping.
+  ReplyOptions:
+  - line: Ask about leaving.
+    nextNode: {fileID: 11400000, guid: fa7a8359162dc7449ab205b06f0990f7, type: 2}
+    favorChange: -1
+    requiredFavor: 0
+    endDialogue: 0
+    playerLine: If she loved me, why did she leave?
+  - line: Share your feeling.
+    nextNode: {fileID: 11400000, guid: 56cc5f87299428448b64fcf09af3528f, type: 2}
+    favorChange: 1
+    requiredFavor: 0
+    endDialogue: 0
+    playerLine: I have been missing her too...
