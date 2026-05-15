@@ -50,8 +50,11 @@ public class DialogueAdvancer : MonoBehaviour
     private bool isShowingPlayerLine = false;
     private int favorLevel = 0;
     private bool friendshipUIShown = false;
+
     private int storyStage = 0;
+    private bool isAfterGiftDialoguePlaying = false;
     private bool isFinalDialoguePlaying = false;
+
     public bool isInDialogue = false;
 
     private void Start()
@@ -59,6 +62,11 @@ public class DialogueAdvancer : MonoBehaviour
         if (friendshipLevelUI != null)
         {
             friendshipLevelUI.SetActive(false);
+        }
+
+        if (resetBlackScreen != null)
+        {
+            resetBlackScreen.SetActive(false);
         }
     }
 
@@ -88,6 +96,8 @@ public class DialogueAdvancer : MonoBehaviour
         isInDialogue = true;
         isWaitingForReply = false;
         isShowingPlayerLine = false;
+        isAfterGiftDialoguePlaying = false;
+        isFinalDialoguePlaying = false;
 
         if (storyStage == 0)
         {
@@ -96,6 +106,7 @@ public class DialogueAdvancer : MonoBehaviour
         else if (storyStage == 2)
         {
             currentNode = afterGiftLine;
+            isAfterGiftDialoguePlaying = true;
         }
         else if (storyStage == 3)
         {
@@ -286,17 +297,22 @@ public class DialogueAdvancer : MonoBehaviour
         {
             storyStage = 1;
 
-            if (bookInteract != null)
-            {
-                bookInteract.UnlockBookInteract();
-            }
-
             if (giftGroupInteract != null)
             {
                 giftGroupInteract.UnlockGiftGroupInteract();
             }
 
-           
+        }
+
+        if (isAfterGiftDialoguePlaying)
+        {
+            isAfterGiftDialoguePlaying = false;
+
+            if (bookInteract != null)
+            {
+                bookInteract.UnlockBookInteract();
+            }
+
         }
 
         if (isFinalDialoguePlaying)

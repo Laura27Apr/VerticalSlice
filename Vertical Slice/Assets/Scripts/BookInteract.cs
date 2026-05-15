@@ -9,7 +9,7 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private float interactDistance = 2f;
 
     private bool playerInteract;
-    private bool firstDialogueFinished = false;
+    private bool unlocked = false;
     private bool bookAlreadyRead = false;
 
     public void Update()
@@ -17,9 +17,10 @@ public class BookInteract : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
 
         playerInteract = distance <= interactDistance;
-        promptUI.SetActive(firstDialogueFinished && playerInteract && !readUI.activeSelf);
 
-        if (firstDialogueFinished && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
+        promptUI.SetActive(unlocked && playerInteract && !readUI.activeSelf);
+
+        if (unlocked && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
 
@@ -44,7 +45,7 @@ public class BookInteract : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (firstDialogueFinished && playerInteract)
+            if (unlocked && playerInteract)
             {
                 promptUI.SetActive(true);
             }
@@ -53,6 +54,6 @@ public class BookInteract : MonoBehaviour
 
     public void UnlockBookInteract()
     {
-        firstDialogueFinished = true;
+        unlocked = true;
     }
 }

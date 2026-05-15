@@ -9,7 +9,7 @@ public class GiftGroupInteract : MonoBehaviour
     [SerializeField] private float interactDistance = 3f;
 
     private bool playerInteract;
-    private bool firstDialogueFinished = false;
+    private bool unlocked = false;
     private bool giftAlreadyRead = false;
 
     public void Update()
@@ -18,9 +18,9 @@ public class GiftGroupInteract : MonoBehaviour
 
         playerInteract = distance <= interactDistance;
 
-        promptUI.SetActive(firstDialogueFinished && playerInteract && !readUI.activeSelf);
+        promptUI.SetActive(unlocked && playerInteract && !readUI.activeSelf);
 
-        if (firstDialogueFinished && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
+        if (unlocked && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
 
@@ -45,7 +45,7 @@ public class GiftGroupInteract : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (firstDialogueFinished && playerInteract)
+            if (unlocked && playerInteract)
             {
                 promptUI.SetActive(true);
             }
@@ -54,6 +54,6 @@ public class GiftGroupInteract : MonoBehaviour
 
     public void UnlockGiftGroupInteract()
     {
-        firstDialogueFinished = true;
+        unlocked = true;
     }
 }
