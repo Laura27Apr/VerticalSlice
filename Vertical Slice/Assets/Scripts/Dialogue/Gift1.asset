@@ -16,7 +16,8 @@ MonoBehaviour:
   - Exactly!
   - Your mother is a brilliant inventor, but that's exactly why some unsavoury characters
     are after her.
-  - Go take a look by the desk, where you will find more.
+  - Next, you might want to take a look through your notebooks and similar items,
+    as you may find something important.
   ReplyOptions:
   - line: Okay, thanks!
     nextNode: {fileID: 0}
