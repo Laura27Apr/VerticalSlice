@@ -16,7 +16,7 @@ MonoBehaviour:
   - Having some trouble?
   ReplyOptions:
   - line: Yes...
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 0ec51e3c2e7327546a4065a92e217d69, type: 2}
     favorChange: 0
     requiredFavor: -10
     endDialogue: 0
@@ -25,5 +25,5 @@ MonoBehaviour:
     nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10
-    endDialogue: 0
+    endDialogue: 1
     playerLine: I am doing great, thanks!

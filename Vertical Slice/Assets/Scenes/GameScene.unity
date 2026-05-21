@@ -453,7 +453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This is the birthday gift that your mum prepared for you, from the time
+  m_text: "This is the birthday gift that your mom prepared for you, from the time
     you were nine until you turned eighteen.\r\nDear Sweetie,\r\nI hope you're doing
     well! I am truly sorry for leaving without saying goodbye. I know I haven't been
     a very good mother. I was always so absorbed in my technical inventions that
@@ -29930,7 +29930,7 @@ MonoBehaviour:
   promptUI: {fileID: 393530166}
   readUI: {fileID: 1210313424}
   player: {fileID: 1483548657}
-  interactDistance: 3
+  interactDistance: 5
 --- !u!65 &1107082797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34105,7 +34105,7 @@ MonoBehaviour:
   promptUI: {fileID: 1692643079}
   readUI: {fileID: 629949430}
   player: {fileID: 1483548657}
-  interactDistance: 5
+  interactDistance: 3
 --- !u!4 &1264404261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4471857804497145948, guid: b24860773379e314f947a1e996bd4085,
@@ -61918,6 +61918,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1483548657}
+    - target: {fileID: 8784283202028707927, guid: fd3120f417c6ba14fb08f77328f2f17e,
+        type: 3}
+      propertyPath: stopDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8784283202028707927, guid: fd3120f417c6ba14fb08f77328f2f17e,
         type: 3}
       propertyPath: followDistance
