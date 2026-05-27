@@ -7,6 +7,7 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private GameObject readUI;
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 2f;
+    [SerializeField] private CluePageSwitcher pageSwitcher;
 
     private bool playerInteract;
     private bool unlocked = false;
@@ -23,6 +24,11 @@ public class BookInteract : MonoBehaviour
         if (unlocked && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
+
+            if (pageSwitcher != null)
+            {
+                pageSwitcher.ShowShortPage();
+            }
 
             if (!bookAlreadyRead)
             {
