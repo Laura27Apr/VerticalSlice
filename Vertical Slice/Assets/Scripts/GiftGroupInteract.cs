@@ -62,4 +62,5 @@ public class GiftGroupInteract : MonoBehaviour
     {
         unlocked = true;
     }
+
 }

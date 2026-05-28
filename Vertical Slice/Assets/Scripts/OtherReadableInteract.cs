@@ -8,8 +8,11 @@ public class OtherReadableInteract : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 3f;
     [SerializeField] private CluePageSwitcher pageSwitcher;
+    [SerializeField] private GameObject outlineTarget;
+    [SerializeField] private string normalLayerName = "Default";
 
     private bool playerInRange;
+    private bool alreadyRead = false;
 
     private void Update()
     {
@@ -29,6 +32,17 @@ public class OtherReadableInteract : MonoBehaviour
             }
 
             Variables.ActiveScene.Set("isReading", true);
+
+            if (!alreadyRead)
+            {
+                alreadyRead = true;
+
+                if (outlineTarget != null)
+                {
+                    SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(normalLayerName));
+                }
+            }
+
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -40,6 +54,18 @@ public class OtherReadableInteract : MonoBehaviour
             Variables.ActiveScene.Set("isReading", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+    }
+
+    private void SetLayerRecursively(GameObject obj, int layer)
+    {
+        if (layer < 0) return;
+
+        obj.layer = layer;
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
         }
     }
 }

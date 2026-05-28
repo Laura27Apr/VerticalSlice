@@ -8,10 +8,31 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 2f;
     [SerializeField] private CluePageSwitcher pageSwitcher;
+    [SerializeField] private GameObject outlineTarget;
+    [SerializeField] private string outlineLayerName = "Outline";
+    [SerializeField] private string normalLayerName = "Default";
 
     private bool playerInteract;
     private bool unlocked = false;
     private bool bookAlreadyRead = false;
+
+    private void Start()
+    {
+        if (outlineTarget != null)
+        {
+            SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(normalLayerName));
+        }
+
+        if (promptUI != null)
+        {
+            promptUI.SetActive(false);
+        }
+
+        if (readUI != null)
+        {
+            readUI.SetActive(false);
+        }
+    }
 
     public void Update()
     {
@@ -34,6 +55,11 @@ public class BookInteract : MonoBehaviour
             {
                 bookAlreadyRead = true;
                 DialogueAdvancer._Instance.FoundDesk();
+
+                if (outlineTarget != null)
+                {
+                    SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(normalLayerName));
+                }
             }
 
             Variables.ActiveScene.Set("isReading", true);
@@ -61,5 +87,22 @@ public class BookInteract : MonoBehaviour
     public void UnlockBookInteract()
     {
         unlocked = true;
+
+        if (!bookAlreadyRead && outlineTarget != null)
+        {
+            SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(outlineLayerName));
+        }
+    }
+
+    private void SetLayerRecursively(GameObject obj, int layer)
+    {
+        if (layer < 0) return;
+
+        obj.layer = layer;
+
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursively(child.gameObject, layer);
+        }
     }
 }
