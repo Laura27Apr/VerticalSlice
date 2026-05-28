@@ -7,6 +7,7 @@ public class OtherReadableInteract : MonoBehaviour
     [SerializeField] private GameObject readUI;
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 3f;
+    [SerializeField] private CluePageSwitcher pageSwitcher;
 
     private bool playerInRange;
 
@@ -21,6 +22,11 @@ public class OtherReadableInteract : MonoBehaviour
         {
             readUI.SetActive(true);
             promptUI.SetActive(false);
+
+            if (pageSwitcher != null)
+            {
+                pageSwitcher.ShowShortPage();
+            }
 
             Variables.ActiveScene.Set("isReading", true);
             Cursor.lockState = CursorLockMode.None;
