@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: 2.d
+  m_Name: 1.a.1.a
   m_EditorClassIdentifier: 
   Lines:
-  - Sure!
-  - I can sense that you are ready to calmly seek the truth.
-  - So I would be more than willing to help you!
-  - Perhaps you could start by taking a look at the corner of the living room.
+  - 'I think you need more time to explore on your own right now. '
+  - Because finding the truth requires a calm mind.
+  - But right now, you seem to be getting too worked up over your mom leaving without
+    saying goodbye.
+  - Perhaps you will calm down as you explore.
   ReplyOptions:
-  - line: Thanks!
+  - line: Alright.
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: -10
+    requiredFavor: -1
     endDialogue: 1
     playerLine: 

@@ -10,13 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: 4.c
+  m_Name: 1.b.2
   m_EditorClassIdentifier: 
   Lines:
-  - I think you should explore it on your own first!
-  - It seems like you already have plenty of your own ideas and thoughts.
+  - 'Being open to others'' suggestions is a great quality! '
+  - I think you are ready to explore around.
+  - If you come across anything that needs clarification or confirmation, I would
+    be happy to help.
   ReplyOptions:
-  - line: Okay.
+  - line: Guide, please!
+    nextNode: {fileID: 11400000, guid: b3c8e99d73f69694eb2697582704a4bd, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Could you give me some tips on what I should focus on?
+  - line: Okay, thanks!
     nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10

@@ -22,9 +22,10 @@ public class DialogueAdvancer : MonoBehaviour
 
     [Header("Dialogue Nodes")]
     [SerializeField] private DialogueNode startLine;
-    [SerializeField] private DialogueNode defaultLine;
     [SerializeField] private DialogueNode afterGiftLine;
     [SerializeField] private DialogueNode finalTruthLine;
+    [SerializeField] private DialogueNode commonDefaultDialogue;
+    [SerializeField] private DialogueNode hintDefaultDialogue;
 
     [Header("UI")]
     [SerializeField] private TMP_Text dialogueText;
@@ -50,12 +51,12 @@ public class DialogueAdvancer : MonoBehaviour
     private bool isShowingPlayerLine = false;
     private int favorLevel = 0;
     private bool friendshipUIShown = false;
-
     private int storyStage = 0;
     private bool isAfterGiftDialoguePlaying = false;
     private bool isFinalDialoguePlaying = false;
-
     public bool isInDialogue = false;
+    private bool hintDialogueFinished = false;
+    private int defaultDialogueCount = 0;
 
     private void Start()
     {
@@ -115,7 +116,20 @@ public class DialogueAdvancer : MonoBehaviour
         }
         else
         {
-            currentNode = defaultLine;
+            if (defaultDialogueCount == 0)
+            {
+                currentNode = commonDefaultDialogue;
+            }
+            else if (!hintDialogueFinished)
+            {
+                currentNode = hintDefaultDialogue;
+            }
+            else
+            {
+                currentNode = commonDefaultDialogue;
+            }
+
+            defaultDialogueCount++;
         }
 
         currentLineIndex = 0;
@@ -271,6 +285,11 @@ public class DialogueAdvancer : MonoBehaviour
     public void EndDialogue()
     {
         Debug.Log("Dialogue End");
+
+        if (currentNode == hintDefaultDialogue)
+        {
+            hintDialogueFinished = true;
+        }
 
         isInDialogue = false;
         dialogueUI.SetActive(false);

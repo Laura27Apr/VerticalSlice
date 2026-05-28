@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: Gift2
+  m_Name: G.1.b
   m_EditorClassIdentifier: 
   Lines:
   - Of course!

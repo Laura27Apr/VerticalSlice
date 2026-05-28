@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: 5.c
+  m_Name: 1.b.1.a
   m_EditorClassIdentifier: 
   Lines:
-  - Sure!
-  - Perhaps you could start by taking a look at the corner of the living room.
+  - I think you should explore it on your own first!
+  - It seems like you already have plenty of your own ideas and thoughts.
   ReplyOptions:
-  - line: Thanks!
+  - line: Okay.
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: -5
+    requiredFavor: -10
     endDialogue: 1
     playerLine: 
