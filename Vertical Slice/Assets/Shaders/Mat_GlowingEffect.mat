@@ -50,6 +50,9 @@ Material:
     - _GlowStrength: 1.5
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _WindFrequency: 3
+    - _WindSpeed: 2
+    - _WindStrength: 0.05
     m_Colors:
     - _TintColor: {r: 1, g: 0.7914416, b: 0.24999997, a: 0}
   m_BuildTextureStacks: []
