@@ -33534,9 +33534,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startLine: {fileID: 11400000, guid: 8b660a4ae4afc914288f74b8a4e30ff4, type: 2}
-  defaultLine: {fileID: 11400000, guid: 0e7639b66f1911e4f9ea872e8b4f7825, type: 2}
-  afterGiftLine: {fileID: 11400000, guid: e44d24c486e5f21459e79254178ec073, type: 2}
+  afterGiftLine: {fileID: 11400000, guid: 68496d6f90eaa664895c82203dccdfaa, type: 2}
   finalTruthLine: {fileID: 11400000, guid: a77b45ee0730865438bc9431dde2f813, type: 2}
+  commonDefaultDialogue: {fileID: 11400000, guid: 0e7639b66f1911e4f9ea872e8b4f7825,
+    type: 2}
+  hintDefaultDialogue: {fileID: 11400000, guid: b85bcfa0c2c2c554995b9dc55004fe37,
+    type: 2}
   dialogueText: {fileID: 965451392}
   replyButtonPrefab: {fileID: 8833118887229378167, guid: eaca8129b40f0c5429eab99a513a74da,
     type: 3}

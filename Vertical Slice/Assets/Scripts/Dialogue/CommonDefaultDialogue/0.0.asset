@@ -22,8 +22,8 @@ MonoBehaviour:
     endDialogue: 0
     playerLine: I forgot what I was supposed to do. Could you tell me again?
   - line: No.
-    nextNode: {fileID: 11400000, guid: 499624d0fbd20904fb5e577926788080, type: 2}
+    nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10
-    endDialogue: 0
+    endDialogue: 1
     playerLine: I am doing great, thanks!
