@@ -65,6 +65,8 @@ For Feature (3), I would like to have my ScriptableObject dialogue system evalua
 
 ## Milestone 3 Devlog
 ### 1
+<img width="1559" height="654" alt="屏幕截图 2026-05-28 225541" src="https://github.com/user-attachments/assets/a264cf9b-30d1-4831-8a0a-24e8d0c6c7db" />
+
 I used a shader to create the glowing flame effect on the hint object. You can find this effect in the pile of gifts by the window. It appears among a pile of gifts in the corner of the room as a "glowing" item to signal to the player that there's a clue there. Additionally, when you reach the end of the story and unlock the notebook on the desk near the entrance, the effect will appear on the notebook as well. First, I took the object's original UVs and took the horizontal coordinates while linking the vertical coordinates to time. This caused the texture's sampling position to shift continuously over time. The flame texture itself isn’t animated, but because the UVs are changing, it appears as if the flame is flowing upward. Next, I multiply the dynamically sampled flame color by a "GlowStrength" to control its brightness. Then, I combine it with the object’s original texture color and output the result to "BaseColor." This shader primarily utilizes UV manipulation and texture sampling in the fragment stage, as discussed in class. In other words, it creates animation effects by altering the texture read position at the pixel stage rather than creating an additional animation clip.
 
 
