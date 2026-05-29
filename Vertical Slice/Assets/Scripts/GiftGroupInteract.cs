@@ -8,15 +8,28 @@ public class GiftGroupInteract : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 3f;
     [SerializeField] private CluePageSwitcher pageSwitcher;
+    [SerializeField] private string clueID;
 
     private bool playerInteract;
     private bool unlocked = false;
     private bool giftAlreadyRead = false;
 
+    private void Start()
+    {
+        if (promptUI != null)
+        {
+            promptUI.SetActive(false);
+        }
+
+        if (readUI != null)
+        {
+            readUI.SetActive(false);
+        }
+    }
+
     public void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-
         playerInteract = distance <= interactDistance;
 
         promptUI.SetActive(unlocked && playerInteract && !readUI.activeSelf);
@@ -33,7 +46,12 @@ public class GiftGroupInteract : MonoBehaviour
             if (!giftAlreadyRead)
             {
                 giftAlreadyRead = true;
-                DialogueAdvancer._Instance.FoundGift();
+
+                if (DialogueAdvancer._Instance != null)
+                {
+                    DialogueAdvancer._Instance.MarkClueRead(clueID);
+                    DialogueAdvancer._Instance.FoundGift();
+                }
             }
 
             Variables.ActiveScene.Set("isReading", true);
@@ -62,5 +80,4 @@ public class GiftGroupInteract : MonoBehaviour
     {
         unlocked = true;
     }
-
 }

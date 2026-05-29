@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueAdvancer : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private GameObject gameController;
     [SerializeField] private BookInteract bookInteract;
     [SerializeField] private GiftGroupInteract giftGroupInteract;
+    [SerializeField] private NotebookInteract notebookInteract;
+    [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
     [SerializeField] private GameObject resetBlackScreen;
     [SerializeField] private float resetDelay = 1.5f;
 
@@ -49,14 +52,21 @@ public class DialogueAdvancer : MonoBehaviour
     private int currentLineIndex = 0;
     private bool isWaitingForReply = false;
     private bool isShowingPlayerLine = false;
+
     private int favorLevel = 0;
     private bool friendshipUIShown = false;
     private int storyStage = 0;
+
     private bool isAfterGiftDialoguePlaying = false;
     private bool isFinalDialoguePlaying = false;
+    private bool isHintDefaultDialoguePlaying = false;
+
     public bool isInDialogue = false;
+
     private bool hintDialogueFinished = false;
     private int defaultDialogueCount = 0;
+
+    private HashSet<string> readClues = new HashSet<string>();
 
     private void Start()
     {
@@ -97,8 +107,10 @@ public class DialogueAdvancer : MonoBehaviour
         isInDialogue = true;
         isWaitingForReply = false;
         isShowingPlayerLine = false;
+
         isAfterGiftDialoguePlaying = false;
         isFinalDialoguePlaying = false;
+        isHintDefaultDialoguePlaying = false;
 
         if (storyStage == 0)
         {
@@ -123,6 +135,7 @@ public class DialogueAdvancer : MonoBehaviour
             else if (!hintDialogueFinished)
             {
                 currentNode = hintDefaultDialogue;
+                isHintDefaultDialoguePlaying = true;
             }
             else
             {
@@ -158,6 +171,20 @@ public class DialogueAdvancer : MonoBehaviour
         {
             storyStage = 3;
         }
+    }
+
+    public void MarkClueRead(string clueID)
+    {
+        if (!string.IsNullOrEmpty(clueID))
+        {
+            readClues.Add(clueID);
+            Debug.Log("Clue read: " + clueID);
+        }
+    }
+
+    private bool HasReadClue(string clueID)
+    {
+        return string.IsNullOrEmpty(clueID) || readClues.Contains(clueID);
     }
 
     public void ShowCurrentLine()
@@ -201,6 +228,11 @@ public class DialogueAdvancer : MonoBehaviour
                 continue;
             }
 
+            if (!HasReadClue(reply.requiredClueID))
+            {
+                continue;
+            }
+
             GameObject button = Instantiate(replyButtonPrefab, replyParent);
             button.GetComponentInChildren<TMP_Text>().text = reply.line;
 
@@ -219,6 +251,26 @@ public class DialogueAdvancer : MonoBehaviour
 
         favorLevel += reply.favorChange;
         UpdateFavorUI();
+
+        if (reply.unlockBookAfterReply)
+        {
+            if (bookInteract != null)
+            {
+                bookInteract.UnlockBookInteract();
+            }
+
+            if (notebookInteract != null)
+            {
+                notebookInteract.UnlockOutline();
+            }
+
+            if (assistantNotebookInteract != null)
+            {
+                assistantNotebookInteract.UnlockOutline();
+            }
+
+            storyStage = 1;
+        }
 
         isWaitingForReply = false;
         ClearReplies();
@@ -286,9 +338,20 @@ public class DialogueAdvancer : MonoBehaviour
     {
         Debug.Log("Dialogue End");
 
-        if (currentNode == hintDefaultDialogue)
+        if (isHintDefaultDialoguePlaying)
         {
             hintDialogueFinished = true;
+            isHintDefaultDialoguePlaying = false;
+
+            if (notebookInteract != null)
+            {
+                notebookInteract.UnlockOutline();
+            }
+
+            if (assistantNotebookInteract != null)
+            {
+                assistantNotebookInteract.UnlockOutline();
+            }
         }
 
         isInDialogue = false;
@@ -320,18 +383,11 @@ public class DialogueAdvancer : MonoBehaviour
             {
                 giftGroupInteract.UnlockGiftGroupInteract();
             }
-
         }
 
         if (isAfterGiftDialoguePlaying)
         {
             isAfterGiftDialoguePlaying = false;
-
-            if (bookInteract != null)
-            {
-                bookInteract.UnlockBookInteract();
-            }
-
         }
 
         if (isFinalDialoguePlaying)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 0.0
   m_EditorClassIdentifier: 
   Lines:
-  - Having some trouble?
+  - Need any help?
   ReplyOptions:
   - line: Yes...
     nextNode: {fileID: 11400000, guid: 0ec51e3c2e7327546a4065a92e217d69, type: 2}
@@ -21,9 +21,29 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 0
     playerLine: I forgot what I was supposed to do. Could you tell me again?
+    unlockBookAfterReply: 0
+    requiredClueID: 
   - line: No.
     nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10
     endDialogue: 1
     playerLine: I am doing great, thanks!
+    unlockBookAfterReply: 0
+    requiredClueID: 
+  - line: Ask about the 6/3 experiment diary.
+    nextNode: {fileID: 11400000, guid: c15b99ab402785249908595b6dbb395d, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/3 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/3Notebook
+  - line: Ask about the 6/5 experiment diary.
+    nextNode: {fileID: 11400000, guid: c6c8a54f16f1e2a468f4630c1b578240, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: 
+    unlockBookAfterReply: 0
+    requiredClueID: 6/5AssistantNotebook

@@ -15,7 +15,7 @@ MonoBehaviour:
   Lines:
   - Yes!
   - You are really close to the truth now.
-  - Maybe you can find out more about the truth right here at the desk.
+  - Maybe you can find out more if you pay attention to the "glowing" items.
   ReplyOptions:
   - line: Okay, thanks!
     nextNode: {fileID: 0}
@@ -23,3 +23,5 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 1
+    requiredClueID: 

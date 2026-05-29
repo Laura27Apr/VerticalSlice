@@ -22,6 +22,7 @@ MonoBehaviour:
   - line: Alright.
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: -1
+    requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 0

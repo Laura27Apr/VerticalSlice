@@ -25,9 +25,11 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 0
     playerLine: Could you give me some tips on what I should focus on?
+    unlockBookAfterReply: 0
   - line: Okay, thanks!
     nextNode: {fileID: 0}
     favorChange: 0
-    requiredFavor: -1
+    requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 0

@@ -22,12 +22,14 @@ MonoBehaviour:
   - line: Ask about leaving.
     nextNode: {fileID: 11400000, guid: fa7a8359162dc7449ab205b06f0990f7, type: 2}
     favorChange: -1
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: If she loved me, why did she leave?
+    unlockBookAfterReply: 0
   - line: Share your feeling.
     nextNode: {fileID: 11400000, guid: 56cc5f87299428448b64fcf09af3528f, type: 2}
     favorChange: 1
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: I have been missing her too...
+    unlockBookAfterReply: 0

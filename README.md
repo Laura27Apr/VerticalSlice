@@ -64,8 +64,16 @@ This architecture is very helpful for my game because Visual Scripting primarily
 For Feature (3), I would like to have my ScriptableObject dialogue system evaluated. My dialogue nodes are built using DialogueNode ScriptableObjects, and a DialogueAdvancer C# script is responsible for reading and displaying dialogue lines and player reply options. This system is prominently featured in the game and can be found in the 'dialogueState' within the 'foxStateGraph' and in my dialogue script.
 
 ## Milestone 3 Devlog
-Milestone 3 Devlog goes here.
+### 1
+I used a shader to create the glowing flame effect on the hint object. You can find this effect in the pile of gifts by the window. It appears among a pile of gifts in the corner of the room as a "glowing" item to signal to the player that there's a clue there. Additionally, when you reach the end of the story and unlock the notebook on the desk near the entrance, the effect will appear on the notebook as well. First, I took the object's original UVs and took the horizontal coordinates while linking the vertical coordinates to time. This caused the texture's sampling position to shift continuously over time. The flame texture itself isn’t animated, but because the UVs are changing, it appears as if the flame is flowing upward. Next, I multiply the dynamically sampled flame color by a "GlowStrength" to control its brightness. Then, I combine it with the object’s original texture color and output the result to "BaseColor." This shader primarily utilizes UV manipulation and texture sampling in the fragment stage, as discussed in class. In other words, it creates animation effects by altering the texture read position at the pixel stage rather than creating an additional animation clip.
 
+
+### 2
+Based on playtest feedback, I have made improvements to improve the player experience. First, I fixed an issue that prevented players from exiting the default dialogue properly, which could cause them to get stuck in conversations. Second, I revised the introductory information screen. I updated the visual style to better match the story's setting, and I added buttons that allow players to control the reading pace. Now, players can control the pace themselves rather than having the timeline automatically advance the pages as before. Some testers felt that the original autoplay speed was too fast, so this change allows players to absorb the background information at a more comfortable pace. I have also added two new clues to expand the story further, making the overall investigation and deduction process more complete.
+
+
+### 3
+Since the last milestone, I have added two new clues to enrich the story's background and help players make deductions more easily. To improve information accessibility, I have split each clue into two pages. The first page displays the clue’s title and a brief description. The second page shows the detailed content. This allows players to quickly grasp a clue's key points before deciding whether to read further. Within the gameplay loop, this helps players organize and analyze evidence more effectively. I also designed corresponding NPC dialogues for each clue. When players find and read a relevant clue, they unlock new dialogue content and receive more background information from the NPC. This helps them establish connections between clues. I also added a second set of default dialogue as a hint system. When players are unsure of their next steps, they can speak with the NPC again to receive hints, which are presented visually through Shader Graph effects.
 
 ## Milestone 4 Devlog
 Milestone 4 Devlog goes here.
@@ -79,3 +87,6 @@ Final Devlog goes here.
 - [Stylized House Interior](https://assetstore.unity.com/packages/3d/environments/stylized-house-interior-224331)
 - [Toon Fox](https://assetstore.unity.com/packages/3d/characters/animals/toon-fox-183005)
 - [Heart Icon](https://icons8.com/icon/87/heart)
+- [Gifts Assets](https://assetstore.unity.com/packages/3d/props/pbr-christmas-gifts-237877)
+- [Fire Model](https://sketchfab.com/3d-models/animated-stylized-fire-c872b1d5a14f456c93d2b275b6c2642e)
+- [Notebook Asset](https://assetstore.unity.com/packages/3d/props/grimoire-style-book-3996)

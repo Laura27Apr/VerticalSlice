@@ -13,17 +13,37 @@ MonoBehaviour:
   m_Name: H.0
   m_EditorClassIdentifier: 
   Lines:
-  - Are you still confused about what to look for?
+  - Need any help?
   ReplyOptions:
-  - line: Yes.
+  - line: I need some guidance.
     nextNode: {fileID: 11400000, guid: 813132b74d44f674a965e2faec46b52d, type: 2}
-    favorChange: 0
+    favorChange: 1
     requiredFavor: -10
     endDialogue: 0
     playerLine: I can't find anything... Could you please give me some hints?
+    unlockBookAfterReply: 0
+    requiredClueID: 
   - line: No.
     nextNode: {fileID: 11400000, guid: 499624d0fbd20904fb5e577926788080, type: 2}
     favorChange: 0
     requiredFavor: -10
     endDialogue: 0
     playerLine: Maybe I think I'll try again on my own!
+    unlockBookAfterReply: 0
+    requiredClueID: 
+  - line: Ask about the 6/3 experiment diary.
+    nextNode: {fileID: 11400000, guid: c15b99ab402785249908595b6dbb395d, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/3 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/3Notebook
+  - line: Ask about the 6/5 experiment diary.
+    nextNode: {fileID: 11400000, guid: c6c8a54f16f1e2a468f4630c1b578240, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/5 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/5AssistantNotebook

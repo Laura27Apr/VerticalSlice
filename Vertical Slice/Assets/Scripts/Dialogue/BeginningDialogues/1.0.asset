@@ -24,12 +24,14 @@ MonoBehaviour:
   - line: Trust it.
     nextNode: {fileID: 11400000, guid: 9afb9297f19f8dc41987564a08333c5d, type: 2}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: If you are here to tell me a story about my mom, I will believe you.
+    unlockBookAfterReply: 0
   - line: Question it.
     nextNode: {fileID: 11400000, guid: 8bf8966fe10c466409c02581dac45542, type: 2}
     favorChange: 0
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: Why should I believe you?
+    unlockBookAfterReply: 0

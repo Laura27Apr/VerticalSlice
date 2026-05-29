@@ -8,6 +8,8 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 2f;
     [SerializeField] private CluePageSwitcher pageSwitcher;
+    [SerializeField] private string clueID;
+    [SerializeField] private GameObject fireObject;
     [SerializeField] private GameObject outlineTarget;
     [SerializeField] private string outlineLayerName = "Outline";
     [SerializeField] private string normalLayerName = "Default";
@@ -18,11 +20,6 @@ public class BookInteract : MonoBehaviour
 
     private void Start()
     {
-        if (outlineTarget != null)
-        {
-            SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(normalLayerName));
-        }
-
         if (promptUI != null)
         {
             promptUI.SetActive(false);
@@ -32,12 +29,16 @@ public class BookInteract : MonoBehaviour
         {
             readUI.SetActive(false);
         }
+
+        if (fireObject != null)
+        {
+            fireObject.SetActive(false);
+        }
     }
 
     public void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
-
         playerInteract = distance <= interactDistance;
 
         promptUI.SetActive(unlocked && playerInteract && !readUI.activeSelf);
@@ -54,7 +55,12 @@ public class BookInteract : MonoBehaviour
             if (!bookAlreadyRead)
             {
                 bookAlreadyRead = true;
-                DialogueAdvancer._Instance.FoundDesk();
+
+                if (DialogueAdvancer._Instance != null)
+                {
+                    DialogueAdvancer._Instance.MarkClueRead(clueID);
+                    DialogueAdvancer._Instance.FoundDesk();
+                }
 
                 if (outlineTarget != null)
                 {
@@ -87,6 +93,11 @@ public class BookInteract : MonoBehaviour
     public void UnlockBookInteract()
     {
         unlocked = true;
+
+        if (fireObject != null)
+        {
+            fireObject.SetActive(true);
+        }
 
         if (!bookAlreadyRead && outlineTarget != null)
         {

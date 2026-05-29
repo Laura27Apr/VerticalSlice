@@ -23,3 +23,5 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 0
+    requiredClueID: 

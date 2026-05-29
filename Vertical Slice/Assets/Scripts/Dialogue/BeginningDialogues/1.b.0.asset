@@ -21,12 +21,14 @@ MonoBehaviour:
   - line: Dismiss it.
     nextNode: {fileID: 11400000, guid: 30344e4b69a83b04bad7198d9f33d5ca, type: 2}
     favorChange: -1
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: I do not see why that matters.
+    unlockBookAfterReply: 0
   - line: Agree with it.
     nextNode: {fileID: 11400000, guid: a8d046d7f447d8945bbac7f6c74152e6, type: 2}
     favorChange: 1
-    requiredFavor: 0
+    requiredFavor: -10
     endDialogue: 0
     playerLine: "Yes\u2026 she was always too kind to everyone."
+    unlockBookAfterReply: 0

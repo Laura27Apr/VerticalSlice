@@ -16,8 +16,8 @@ MonoBehaviour:
   - Exactly!
   - Your mother is a brilliant inventor, but that's exactly why some unsavoury characters
     are after her.
-  - Next, you might want to take a look through your notebooks and similar items,
-    as you may find something important.
+  - Next, maybe you can find out more if you pay attention to the "glowing" items.
+    may find something important.
   ReplyOptions:
   - line: Okay, thanks!
     nextNode: {fileID: 0}
@@ -25,3 +25,5 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 1
+    requiredClueID: 

@@ -16,7 +16,7 @@ MonoBehaviour:
   - Sure!
   - I can sense that you are ready to calmly seek the truth.
   - So I would be more than willing to help you!
-  - Perhaps you could start by taking a look at the corner of the living room.
+  - Perhaps you could start by taking a look at the corner which is near the window.
   ReplyOptions:
   - line: Thanks!
     nextNode: {fileID: 0}
@@ -24,3 +24,5 @@ MonoBehaviour:
     requiredFavor: -10
     endDialogue: 1
     playerLine: 
+    unlockBookAfterReply: 0
+    requiredClueID: 
