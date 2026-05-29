@@ -406,6 +406,6 @@ public class DialogueAdvancer : MonoBehaviour
 
         yield return new WaitForSeconds(resetDelay);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("OpeningScene");
     }
 }
