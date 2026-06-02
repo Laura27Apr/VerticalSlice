@@ -13,6 +13,7 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private GameObject outlineTarget;
     [SerializeField] private string outlineLayerName = "Outline";
     [SerializeField] private string normalLayerName = "Default";
+    [SerializeField] private bool isLastClue = false;
 
     private bool playerInteract;
     private bool unlocked = false;
@@ -46,6 +47,11 @@ public class BookInteract : MonoBehaviour
         if (unlocked && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
+
+            if (isLastClue && Music.Instance != null)
+            {
+                Music.Instance.PlayFinalBookBGM();
+            }
 
             if (pageSwitcher != null)
             {
