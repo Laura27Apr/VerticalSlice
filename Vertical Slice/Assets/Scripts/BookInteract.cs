@@ -5,6 +5,7 @@ public class BookInteract : MonoBehaviour
 {
     [SerializeField] private GameObject promptUI;
     [SerializeField] private GameObject readUI;
+    [SerializeField] private GameObject lockedClueUI;
     [SerializeField] private Transform player;
     [SerializeField] private float interactDistance = 2f;
     [SerializeField] private CluePageSwitcher pageSwitcher;
@@ -16,7 +17,8 @@ public class BookInteract : MonoBehaviour
     [SerializeField] private bool isLastClue = false;
 
     private bool playerInteract;
-    private bool unlocked = false;
+    private bool canShowPrompt = false;
+    private bool canReadBook = false;
     private bool bookAlreadyRead = false;
 
     private void Start()
@@ -31,6 +33,11 @@ public class BookInteract : MonoBehaviour
             readUI.SetActive(false);
         }
 
+        if (lockedClueUI != null)
+        {
+            lockedClueUI.SetActive(false);
+        }
+
         if (fireObject != null)
         {
             fireObject.SetActive(false);
@@ -42,10 +49,25 @@ public class BookInteract : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         playerInteract = distance <= interactDistance;
 
-        promptUI.SetActive(unlocked && playerInteract && !readUI.activeSelf);
+        promptUI.SetActive(canShowPrompt && playerInteract && !readUI.activeSelf);
 
-        if (unlocked && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
+        if (canShowPrompt && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
+            if (!canReadBook)
+            {
+                if (lockedClueUI != null)
+                {
+                    lockedClueUI.SetActive(true);
+                }
+
+                return;
+            }
+
+            if (lockedClueUI != null)
+            {
+                lockedClueUI.SetActive(false);
+            }
+
             readUI.SetActive(true);
 
             if (isLastClue && Music.Instance != null)
@@ -89,16 +111,37 @@ public class BookInteract : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            if (unlocked && playerInteract)
+            if (canShowPrompt && playerInteract)
             {
                 promptUI.SetActive(true);
             }
+        }
+
+        if (!playerInteract && lockedClueUI != null)
+        {
+            lockedClueUI.SetActive(false);
+        }
+    }
+
+    public void ShowBookPrompt()
+    {
+        canShowPrompt = true;
+
+        if (fireObject != null)
+        {
+            fireObject.SetActive(true);
         }
     }
 
     public void UnlockBookInteract()
     {
-        unlocked = true;
+        canShowPrompt = true;
+        canReadBook = true;
+
+        if (lockedClueUI != null)
+        {
+            lockedClueUI.SetActive(false);
+        }
 
         if (fireObject != null)
         {

@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
 
 public class DialogueAdvancer : MonoBehaviour
 {
@@ -41,11 +40,9 @@ public class DialogueAdvancer : MonoBehaviour
     [Header("Other Systems")]
     [SerializeField] private NPCFollow npcFollow;
     [SerializeField] private GameObject gameController;
-    [SerializeField] private BookInteract bookInteract;
     [SerializeField] private GiftGroupInteract giftGroupInteract;
     [SerializeField] private NotebookInteract notebookInteract;
     [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
-    [SerializeField] private int requiredClueCount = 3;
     [SerializeField] private GameObject resetBlackScreen;
     [SerializeField] private float resetDelay = 1.5f;
 
@@ -66,8 +63,6 @@ public class DialogueAdvancer : MonoBehaviour
 
     private bool hintDialogueFinished = false;
     private int defaultDialogueCount = 0;
-
-    private HashSet<string> readClues = new HashSet<string>();
 
     private void Start()
     {
@@ -176,24 +171,12 @@ public class DialogueAdvancer : MonoBehaviour
 
     public void MarkClueRead(string clueID)
     {
-        if (!string.IsNullOrEmpty(clueID))
-        {
-            readClues.Add(clueID);
-            Debug.Log("Clue read: " + clueID);
-        }
-
-        if (readClues.Count >= requiredClueCount)
-        {
-            if (bookInteract != null)
-            {
-                bookInteract.UnlockBookInteract();
-            }
-        }
+        Debug.Log("Clue read: " + clueID);
     }
 
     private bool HasReadClue(string clueID)
     {
-        return string.IsNullOrEmpty(clueID) || readClues.Contains(clueID);
+        return true;
     }
 
     public void ShowCurrentLine()
