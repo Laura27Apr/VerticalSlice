@@ -45,6 +45,7 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private GiftGroupInteract giftGroupInteract;
     [SerializeField] private NotebookInteract notebookInteract;
     [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
+    [SerializeField] private int requiredClueCount = 3;
     [SerializeField] private GameObject resetBlackScreen;
     [SerializeField] private float resetDelay = 1.5f;
 
@@ -180,6 +181,14 @@ public class DialogueAdvancer : MonoBehaviour
             readClues.Add(clueID);
             Debug.Log("Clue read: " + clueID);
         }
+
+        if (readClues.Count >= requiredClueCount)
+        {
+            if (bookInteract != null)
+            {
+                bookInteract.UnlockBookInteract();
+            }
+        }
     }
 
     private bool HasReadClue(string clueID)
@@ -254,11 +263,6 @@ public class DialogueAdvancer : MonoBehaviour
 
         if (reply.unlockBookAfterReply)
         {
-            if (bookInteract != null)
-            {
-                bookInteract.UnlockBookInteract();
-            }
-
             if (notebookInteract != null)
             {
                 notebookInteract.UnlockOutline();
