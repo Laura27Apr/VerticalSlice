@@ -46,7 +46,7 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private GiftGroupInteract giftGroupInteract;
     [SerializeField] private NotebookInteract notebookInteract;
     [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
-    [SerializeField] private int requiredClueCount = 2;
+    [SerializeField] private int requiredClueCount = 3;
     [SerializeField] private GameObject resetBlackScreen;
     [SerializeField] private float resetDelay = 1.5f;
 
