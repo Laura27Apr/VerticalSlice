@@ -77,18 +77,19 @@ Based on playtest feedback, I have made improvements to improve the player exper
 ### 3
 Since the last milestone, I have added two new clues to enrich the story's background and help players make deductions more easily. To improve information accessibility, I have split each clue into two pages. The first page displays the clue’s title and a brief description. The second page shows the detailed content. This allows players to quickly grasp a clue's key points before deciding whether to read further. Within the gameplay loop, this helps players organize and analyze evidence more effectively. I also designed corresponding NPC dialogues for each clue. When players find and read a relevant clue, they unlock new dialogue content and receive more background information from the NPC. This helps them establish connections between clues. I also added a second set of default dialogue as a hint system. When players are unsure of their next steps, they can speak with the NPC again to receive hints, which are presented visually through Shader Graph effects.
 
-## Milestone 4 Devlog
-Milestone 4 Devlog goes here.
-
 
 ## Final Devlog
-Final Devlog goes here.
+### 1
+My core gameplay loop is: Players explore the house, talk to the fox, and look for interactive items, such as the gift, the notebook, the assistant notebook, and the final book. The fox will only provide guidance regarding clues if the player's friendship level with the fox is high enough. After reading the clues, players unlock new dialogue options. The fox gradually explains the reason for the mother’s departure based on the information players have discovered. Game content includes opening dialogue, interaction with the gift, multiple clues, a friendship level UI, the fox following the player, and the final key, book, and truth-revealing dialogue. This vertical slice showcases the core experience of the full game. Rather than relying on combat or puzzles, the game focuses on exploring spaces, reading fragmented text, and piecing clues together through dialogue to form a complete story. Though currently just a small-scale scenario, it demonstrates how the full game will allow players to uncover the truth by interacting with the environment, objects, and NPCs.
 
+### 2
+My rendering effect is an outline/highlight effect that is triggered by the game's logic. Specifically, players cannot see this effect at the beginning. They must first progress through the dialogue with the fox. Once the story reaches a certain point, the fox unlocks new clues. At this point, the relevant scripts call either UnlockOutline() or ShowBookPrompt(). This switches the corresponding object's outlineTarget from the standard Default layer to the Outline layer. For example, NotebookInteract.cs and AssistantNotebookInteract.cs both contain UnlockOutline(), which only switches the object to the Outline layer if the corresponding clue has not yet been read. Meanwhile, ShowBookPrompt() and UnlockBookInteract() in BookInteract.cs activate the outline when a key book can be prompted or read. After approaching these objects, players can press F to open the reading UI. Once reading is complete, the script calls SetLayer(outlineTarget, LayerMask.NameToLayer(normalLayerName)), which switches the object back to the Default layer and makes the outline disappear. This way, the outline is not merely decorative but tied to narrative progression, indicating where interactive clue items are located and disappearing after the player has read them, avoiding redundant prompts. Technically, this system combines Unity's layer system, interaction states in C#, and rendering effects based on the outline layer.
 
+https://github.com/Laura27Apr/VerticalSlice/blob/main/Vertical%20Slice/Assets/Scripts/AssistantNotebookInteract.cs
 ## Open-source assets
 - [Stylized House Interior](https://assetstore.unity.com/packages/3d/environments/stylized-house-interior-224331)
 - [Toon Fox](https://assetstore.unity.com/packages/3d/characters/animals/toon-fox-183005)
 - [Heart Icon](https://icons8.com/icon/87/heart)
 - [Gifts Assets](https://assetstore.unity.com/packages/3d/props/pbr-christmas-gifts-237877)
 - [Fire Model](https://sketchfab.com/3d-models/animated-stylized-fire-c872b1d5a14f456c93d2b275b6c2642e)
-- [Notebook Asset](https://assetstore.unity.com/packages/3d/props/grimoire-style-book-3996)
+- [Notebook Assets](https://assetstore.unity.com/packages/3d/props/grimoire-style-book-3996)
