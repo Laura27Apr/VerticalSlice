@@ -59,14 +59,15 @@ public class BookInteract : MonoBehaviour
                 lockedClueUI.SetActive(false);
             }
 
+            lockedMessageOpen = false;
+
+            Variables.ActiveScene.Set("isReading", false);
+
             if (DialogueAdvancer._Instance != null)
             {
                 DialogueAdvancer._Instance.ShowFriendshipUI();
             }
 
-            lockedMessageOpen = false;
-
-            Variables.ActiveScene.Set("isReading", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -87,14 +88,15 @@ public class BookInteract : MonoBehaviour
                     lockedClueUI.SetActive(true);
                 }
 
+                lockedMessageOpen = true;
+
+                Variables.ActiveScene.Set("isReading", true);
+
                 if (DialogueAdvancer._Instance != null)
                 {
                     DialogueAdvancer._Instance.HideFriendshipUI();
                 }
 
-                lockedMessageOpen = true;
-
-                Variables.ActiveScene.Set("isReading", true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
@@ -109,6 +111,8 @@ public class BookInteract : MonoBehaviour
             }
 
             readUI.SetActive(true);
+
+            Variables.ActiveScene.Set("isReading", true);
 
             if (DialogueAdvancer._Instance != null)
             {
@@ -141,7 +145,6 @@ public class BookInteract : MonoBehaviour
                 }
             }
 
-            Variables.ActiveScene.Set("isReading", true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
@@ -152,12 +155,13 @@ public class BookInteract : MonoBehaviour
         {
             readUI.SetActive(false);
 
+            Variables.ActiveScene.Set("isReading", false);
+
             if (DialogueAdvancer._Instance != null)
             {
                 DialogueAdvancer._Instance.ShowFriendshipUI();
             }
 
-            Variables.ActiveScene.Set("isReading", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
@@ -172,9 +176,14 @@ public class BookInteract : MonoBehaviour
             lockedClueUI.SetActive(false);
             lockedMessageOpen = false;
 
-            if (!readUI.activeSelf && DialogueAdvancer._Instance != null)
+            if (!readUI.activeSelf)
             {
-                DialogueAdvancer._Instance.ShowFriendshipUI();
+                Variables.ActiveScene.Set("isReading", false);
+
+                if (DialogueAdvancer._Instance != null)
+                {
+                    DialogueAdvancer._Instance.ShowFriendshipUI();
+                }
             }
         }
     }

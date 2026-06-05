@@ -67,6 +67,8 @@ public class DialogueAdvancer : MonoBehaviour
 
     private bool hintDialogueFinished = false;
     private int defaultDialogueCount = 0;
+    private bool allRequiredCluesRead = false;
+    private bool bookUnlockedAfterFoxDialogue = false;
 
     private HashSet<string> readClues = new HashSet<string>();
 
@@ -170,9 +172,10 @@ public class DialogueAdvancer : MonoBehaviour
         }
         else
         {
-            if (storyStage == 1 && afterGiftDefaultDialogue != null)
+            if (storyStage == 1 && allRequiredCluesRead && !bookUnlockedAfterFoxDialogue && afterGiftDefaultDialogue != null)
             {
                 currentNode = afterGiftDefaultDialogue;
+                isAfterGiftDialoguePlaying = true;
             }
             else if (!hintDialogueFinished)
             {
@@ -220,14 +223,15 @@ public class DialogueAdvancer : MonoBehaviour
         if (!string.IsNullOrEmpty(clueID))
         {
             readClues.Add(clueID);
-            Debug.Log("Clue read: " + clueID);
         }
 
         if (readClues.Count >= requiredClueCount)
         {
-            if (bookInteract != null)
+            allRequiredCluesRead = true;
+
+            if (storyStage < 1)
             {
-                bookInteract.UnlockBookInteract();
+                storyStage = 1;
             }
         }
     }
@@ -446,6 +450,18 @@ public class DialogueAdvancer : MonoBehaviour
         if (isAfterGiftDialoguePlaying)
         {
             isAfterGiftDialoguePlaying = false;
+
+            if (allRequiredCluesRead && !bookUnlockedAfterFoxDialogue)
+            {
+                bookUnlockedAfterFoxDialogue = true;
+
+                if (bookInteract != null)
+                {
+                    bookInteract.UnlockBookInteract();
+                }
+
+                Debug.Log("Book unlocked after fox dialogue.");
+            }
         }
 
         if (isFinalDialoguePlaying)

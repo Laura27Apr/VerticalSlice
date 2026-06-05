@@ -493,7 +493,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1595,14 +1595,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I always thought he was helping me test the teleportation technology because
-    he admired it so much. But I never expected his true motive to be stealing it.
-    I\u2019m worried that he\u2019ll eventually try to take it all away from me.
-    For my family\u2019s safety, I should leave now because he\u2019s a paranoid
-    person. I\u2019m afraid he might do something terrible to get his hands on it.I\u2019ll
-    try to stall for as long as possible, at least until I\u2019ve seen my little
-    one through to his eighth birthday. It\u2019s such a shame that I might never
-    have the chance to see my little one again in the future."
+  m_text: "\tI always thought he was helping me test the teleportation technology
+    because he admired it so much. But I never expected his true motive to be stealing
+    it. I\u2019m worried that he\u2019ll eventually try to take it all away from
+    me. For my family\u2019s safety, I should leave now because he\u2019s a paranoid
+    person. I\u2019m afraid he might do something terrible to get his hands on it.
+    I\u2019ll try to stall for as long as possible, at least until I\u2019ve seen
+    my little one through to her eighth birthday. It\u2019s such a shame that I might
+    never have the chance to see my little one again in the future."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1629,14 +1629,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.5
+  m_fontSize: 23.3
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3608,16 +3608,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "6/5: \nThe data from the main experiment has finally stabilised. She seems
-    to trust me more than before and has left me in charge of handling many of the
-    nightly log entries and equipment calibrations on my own. \r\nTonight, the lab
-    is quiet, with only the sound of the machines running to be heard. I witnessed
-    the entire process of core coordinate calculations for the first time.\r\nIf
+  m_text: "6/5: \n\tThe data from the main experiment has finally stabilised. She
+    seems to trust me more than before and has left me in charge of handling many
+    of the nightly log entries and equipment calibrations on my own. \r\n\tTonight,
+    the lab is quiet, with only the sound of the machines running to be heard. I
+    witnessed the entire process of core coordinate calculations for the first time.\r\n\tIf
     this technology matures, it will transform far more than just the transport industry.
     It could deliver anything anywhere, and it could also allow certain people to
-    bypass any door they shouldn't pass through.\r\nHowever, the professor is still
+    bypass any door they shouldn't pass through.\r\n\tHowever, the professor is still
     keeping the project secret, always claiming that it is not \"safe enough\" yet.
-    If she refuses to let it leave here, I'll have to find it a new home myself."
+    If she refuses to let it leave here, I'll have to find it a new way myself."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3644,14 +3644,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.65
-  m_fontSizeBase: 18
+  m_fontSize: 18.4
+  m_fontSizeBase: 18.4
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8075,7 +8075,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -11283,7 +11283,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393530166}
   m_LocalRotation: {x: -0.015762597, y: -0.7208364, z: -0.01105538, w: 0.6928378}
-  m_LocalPosition: {x: 0, y: 0, z: 2.286562}
+  m_LocalPosition: {x: 0, y: 0, z: 2.295}
   m_LocalScale: {x: 0.0025000006, y: 0.0025000002, z: 0.0025000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11292,7 +11292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -153.055, y: -268.586, z: 91.407}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.9015198, y: 1.5171509}
+  m_AnchoredPosition: {x: -1.6759949, y: 1.5090027}
   m_SizeDelta: {x: 960, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393530171
@@ -12917,13 +12917,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "6/3: \nToday, we successfully conducted our first short-distance spatial
-    teleportation experiment.\r\nThe test subject was a fountain pen. After activating
+  m_text: "6/3: \n\tToday, we successfully conducted our first short-distance spatial
+    teleportation experiment.\r\n\tThe test subject was a fountain pen. After activating
     the device, the pen appeared in the target room approximately two seconds later,
     with an offset of about fifteen centimetres. While the offset is still inconsistent,
-    the overall results were better than expected.\r\nThe main issue at present is
-    excessive energy consumption. A single teleportation caused the main unit to
-    overheat for ten minutes continuously. In future, we will need to try shortening
+    the overall results were better than expected.\r\n\tThe main issue at present
+    is excessive energy consumption. A single teleportation caused the main unit
+    to overheat for ten minutes continuously. In future, we will need to try shortening
     the activation time."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12951,14 +12951,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.5
+  m_fontSize: 21.65
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -15326,9 +15326,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '<size=36>Before you can read this, you''ll need to find all the remaining
-    clues!</size>
+    clues and talk with the fox!</size>
 
-    *Pay close attention to the glowing items~!'
+    *Pay close attention to the glowing
+    items~!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29156,7 +29157,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -30777,13 +30778,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dear Sweetie:\nI hope you're doing well! I am truly sorry for leaving
+  m_text: "Dear Sweetie:\n\tI hope you're doing well! I am truly sorry for leaving
     without saying goodbye. I know I haven't been a very good mother. I was always
     so absorbed in my technical inventions that I spent very little time with you.
     But the fact that you\u2019re reading this card proves that my inventions were
     useful after all! Now that you're finally an adult, I think it's time to tell
     you the truth about why I left. I wonder how Little Fox has been treating you?
-    I hope he hasn't been too harsh! \r\nThe truth is important, but please don\u2019t
+    I hope he hasn't been too harsh! \r\n\tThe truth is important, but please don\u2019t
     let it consume you. What I hope you\u2019ll always remember is that I love you.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -30811,14 +30812,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.5
-  m_fontSizeBase: 18
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -39211,7 +39212,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 8
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
