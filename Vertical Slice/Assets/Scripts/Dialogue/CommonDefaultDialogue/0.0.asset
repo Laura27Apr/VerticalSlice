@@ -44,6 +44,6 @@ MonoBehaviour:
     favorChange: 0
     requiredFavor: -10
     endDialogue: 0
-    playerLine: 
+    playerLine: I would like to know more about the 6/5 experimental diary.
     unlockBookAfterReply: 0
     requiredClueID: 6/5AssistantNotebook

@@ -23,9 +23,22 @@ MonoBehaviour:
     endDialogue: 0
     playerLine: It was her assistant who attempted to steal her spatial teleportation
       invention.
+    unlockBookAfterReply: 0
+    requiredClueID: 
   - line: I am not sure...
     nextNode: {fileID: 11400000, guid: 1dd34043b8fe7ae45a694991ab18d717, type: 2}
     favorChange: 0
     requiredFavor: -10
     endDialogue: 0
     playerLine: 
+    unlockBookAfterReply: 0
+    requiredClueID: 
+  - line: Was she trying to protect me?
+    nextNode: {fileID: 11400000, guid: 847a0a051251c744e97db8b686a95773, type: 2}
+    favorChange: 1
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Maybe... she wasn't abandoning me. She just wanted to tryto protect
+      me all along.
+    unlockBookAfterReply: 0
+    requiredClueID: 

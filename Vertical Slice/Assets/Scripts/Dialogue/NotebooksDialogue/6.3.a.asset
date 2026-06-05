@@ -17,8 +17,25 @@ MonoBehaviour:
   - This is experimental diary belongs to your mom.
   - 'Your mom really put a lot of thought into this experiment. '
   - "Remember the contents of this experimental notebook since it\u2019s important! "
+  - Any other problems?
   ReplyOptions:
-  - line: Got it.
+  - line: Ask about the gifts.
+    nextNode: {fileID: 11400000, guid: e44d24c486e5f21459e79254178ec073, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Did my mom prepare all of the gifts for me?
+    unlockBookAfterReply: 0
+    requiredClueID: Gifts
+  - line: Ask about the 6/5 experiment diary.
+    nextNode: {fileID: 11400000, guid: c6c8a54f16f1e2a468f4630c1b578240, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/5 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/5AssistantNotebook
+  - line: No, thanks!
     nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10

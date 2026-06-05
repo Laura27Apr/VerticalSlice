@@ -27,6 +27,7 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private DialogueNode finalTruthLine;
     [SerializeField] private DialogueNode commonDefaultDialogue;
     [SerializeField] private DialogueNode hintDefaultDialogue;
+    [SerializeField] private DialogueNode afterGiftDefaultDialogue;
 
     [Header("UI")]
     [SerializeField] private TMP_Text dialogueText;
@@ -45,6 +46,7 @@ public class DialogueAdvancer : MonoBehaviour
     [SerializeField] private GiftGroupInteract giftGroupInteract;
     [SerializeField] private NotebookInteract notebookInteract;
     [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
+    [SerializeField] private int requiredClueCount = 2;
     [SerializeField] private GameObject resetBlackScreen;
     [SerializeField] private float resetDelay = 1.5f;
 
@@ -168,9 +170,9 @@ public class DialogueAdvancer : MonoBehaviour
         }
         else
         {
-            if (defaultDialogueCount == 0)
+            if (storyStage == 1 && afterGiftDefaultDialogue != null)
             {
-                currentNode = commonDefaultDialogue;
+                currentNode = afterGiftDefaultDialogue;
             }
             else if (!hintDialogueFinished)
             {
@@ -219,6 +221,14 @@ public class DialogueAdvancer : MonoBehaviour
         {
             readClues.Add(clueID);
             Debug.Log("Clue read: " + clueID);
+        }
+
+        if (readClues.Count >= requiredClueCount)
+        {
+            if (bookInteract != null)
+            {
+                bookInteract.UnlockBookInteract();
+            }
         }
     }
 
@@ -360,17 +370,25 @@ public class DialogueAdvancer : MonoBehaviour
     {
         if (favorImage == null) return;
 
+        Color neutralColor = new Color(1f, 1f, 1f);
+        Color positiveColor = new Color(1f, 0.25f, 0.55f);
+        Color negativeColor = new Color(0.08f, 0.08f, 0.08f);
+
+        int maxFavor = 3;
+
         if (favorLevel > 0)
         {
-            favorImage.color = new Color(1f, 0.71f, 0.76f);
+            float t = Mathf.Clamp01(favorLevel / (float)maxFavor);
+            favorImage.color = Color.Lerp(neutralColor, positiveColor, t);
         }
         else if (favorLevel < 0)
         {
-            favorImage.color = new Color(0.4f, 0.4f, 0.4f);
+            float t = Mathf.Clamp01(-favorLevel / (float)maxFavor);
+            favorImage.color = Color.Lerp(neutralColor, negativeColor, t);
         }
         else
         {
-            favorImage.color = new Color(1f, 1f, 1f);
+            favorImage.color = neutralColor;
         }
     }
 

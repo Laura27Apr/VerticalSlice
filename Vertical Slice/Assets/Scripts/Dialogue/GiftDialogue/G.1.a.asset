@@ -17,8 +17,25 @@ MonoBehaviour:
   - Your mother is a brilliant inventor, but that's exactly why some unsavoury characters
     are after her.
   - 'Next, maybe you can find out more if you pay attention to the "glowing" items. '
+  - Any other problems?
   ReplyOptions:
-  - line: Okay, thanks!
+  - line: Ask about the 6/3 experiment diary.
+    nextNode: {fileID: 11400000, guid: c15b99ab402785249908595b6dbb395d, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/3 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/3Notebook
+  - line: Ask about the 6/5 experiment diary.
+    nextNode: {fileID: 11400000, guid: c6c8a54f16f1e2a468f4630c1b578240, type: 2}
+    favorChange: 0
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: I would like to know more about the 6/5 experimental diary.
+    unlockBookAfterReply: 0
+    requiredClueID: 6/5AssistantNotebook
+  - line: No, thanks!
     nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10

@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
-using Unity.VisualScripting;
 
 public class PromptUIFacing : MonoBehaviour
 {
-    public void LateUpdate()
+    private Camera mainCamera;
+
+    private void Start()
     {
-        if (Camera.main == null) return;
+        mainCamera = Camera.main;
+    }
 
-        Vector3 direction = Camera.main.transform.position - transform.position;
+    private void LateUpdate()
+    {
+        if (mainCamera == null) return;
 
-        direction.y = 0;
-        
-        transform.rotation = Quaternion.LookRotation(direction);
+        transform.rotation = mainCamera.transform.rotation;
+        transform.Rotate(0f, 180f, 0f);
     }
 }

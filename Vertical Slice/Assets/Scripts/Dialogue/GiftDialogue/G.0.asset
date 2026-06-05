@@ -20,7 +20,7 @@ MonoBehaviour:
     favorChange: 0
     requiredFavor: -10
     endDialogue: 0
-    playerLine: Did my mom prepare all of these gifts for me?
+    playerLine: Did my mom prepare all of the gifts for me?
     unlockBookAfterReply: 0
     requiredClueID: Gifts
   - line: No

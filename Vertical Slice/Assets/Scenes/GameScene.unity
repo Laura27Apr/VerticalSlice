@@ -11302,7 +11302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393530166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79fd5a8a60d3d6f4ea54c3d831f94bde, type: 3}
   m_Name: 
@@ -34001,6 +34001,8 @@ MonoBehaviour:
     type: 2}
   hintDefaultDialogue: {fileID: 11400000, guid: b85bcfa0c2c2c554995b9dc55004fe37,
     type: 2}
+  afterGiftDefaultDialogue: {fileID: 11400000, guid: 68496d6f90eaa664895c82203dccdfaa,
+    type: 2}
   dialogueText: {fileID: 965451392}
   replyButtonPrefab: {fileID: 8833118887229378167, guid: eaca8129b40f0c5429eab99a513a74da,
     type: 3}
@@ -34016,6 +34018,7 @@ MonoBehaviour:
   giftGroupInteract: {fileID: 390591326}
   notebookInteract: {fileID: 2060354918}
   assistantNotebookInteract: {fileID: 498460054}
+  requiredClueCount: 3
   resetBlackScreen: {fileID: 1473666948}
   resetDelay: 1.5
   isInDialogue: 0
@@ -35738,7 +35741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222991581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79fd5a8a60d3d6f4ea54c3d831f94bde, type: 3}
   m_Name: 
@@ -46819,7 +46822,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1579239098}
-  - component: {fileID: 1579239099}
   m_Layer: 5
   m_Name: LockedClueBookUI
   m_TagString: Untagged
@@ -46849,20 +46851,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.5, y: 2.5}
   m_SizeDelta: {x: -625, y: -317}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1579239099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579239097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ddbdbc48ef6a74b970b116307619ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shortPage: {fileID: 0}
-  detailPage: {fileID: 0}
 --- !u!1001 &1590220589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58361,7 +58349,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947304666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79fd5a8a60d3d6f4ea54c3d831f94bde, type: 3}
   m_Name: 
@@ -58476,7 +58464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947532542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79fd5a8a60d3d6f4ea54c3d831f94bde, type: 3}
   m_Name: 

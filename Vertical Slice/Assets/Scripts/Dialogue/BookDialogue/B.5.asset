@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
+  m_Name: B.5
+  m_EditorClassIdentifier: 
+  Lines:
+  - She said you are her most precious treasure.
+  - Every choice she made after that came from the same place.
+  - Not because she stopped loving you.
+  - But because she loved you too much to take that risk.
+  ReplyOptions:
+  - line: I think I understand now.
+    nextNode: {fileID: 11400000, guid: b5098785e29d75f4880f5113fdb79631, type: 2}
+    favorChange: 1
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Maybe I don't agree with her choice. But I think I finally understand
+      it.
+    unlockBookAfterReply: 0
+    requiredClueID: 
+  - line: I still miss her.
+    nextNode: {fileID: 11400000, guid: b5098785e29d75f4880f5113fdb79631, type: 2}
+    favorChange: 1
+    requiredFavor: -10
+    endDialogue: 0
+    playerLine: Knowing the truth doesn't make me miss her any less.
+    unlockBookAfterReply: 0
+    requiredClueID: 

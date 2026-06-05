@@ -15,7 +15,7 @@ MonoBehaviour:
   Lines:
   - Need any help?
   ReplyOptions:
-  - line: I need some guidance.
+  - line: Yes...
     nextNode: {fileID: 11400000, guid: 813132b74d44f674a965e2faec46b52d, type: 2}
     favorChange: 1
     requiredFavor: -10
@@ -39,7 +39,7 @@ MonoBehaviour:
     playerLine: I would like to know more about the 6/3 experimental diary.
     unlockBookAfterReply: 0
     requiredClueID: 6/3Notebook
-  - line: Ask about the 6/5 experiment diary.
+  - line: Ask about the 6/3 experiment diary.
     nextNode: {fileID: 11400000, guid: c6c8a54f16f1e2a468f4630c1b578240, type: 2}
     favorChange: 0
     requiredFavor: -10

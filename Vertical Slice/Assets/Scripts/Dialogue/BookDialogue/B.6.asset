@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: Ending
+  m_Name: B.6
   m_EditorClassIdentifier: 
   Lines:
-  - "Yes... I\u2019ve been watching her all along. "
-  - 'She bore a heavy burden, but in the end, she perfected the technology, giving
-    you the chance to come here and learn the truth. '
-  - "Her final wish is that you will always remember her\u2014and remember that she
-    loved you!"
+  - I can understand.
+  - 'Understanding someone doesn''t erase the pain. '
+  - But it can help us carry it.
+  - For years, you've been searching for an answer about your mom's leaving.
+  - And now you have it.
   ReplyOptions:
-  - line: I will.
-    nextNode: {fileID: 0}
+  - line: I'll remember her forever.
+    nextNode: {fileID: 11400000, guid: a9babfe115dcb6d48ba6608fc800a8a3, type: 2}
     favorChange: 0
     requiredFavor: -10
-    endDialogue: 1
-    playerLine: I will. Thank you, goodbye!
+    endDialogue: 0
+    playerLine: 
+    unlockBookAfterReply: 0
+    requiredClueID: 

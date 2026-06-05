@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e822aad7b61dec47bb7b52e4276192f, type: 3}
-  m_Name: B.2
+  m_Name: Ending
   m_EditorClassIdentifier: 
   Lines:
-  - That's alright.
-  - Let's go through it one more time.
+  - I know you will.
   ReplyOptions:
-  - line: Okay.
-    nextNode: {fileID: 11400000, guid: ebfd8df44b8f59b498a07c46cf41a609, type: 2}
+  - line: Yes...
+    nextNode: {fileID: 0}
     favorChange: 0
     requiredFavor: -10
-    endDialogue: 0
-    playerLine: Thanks! I will listen to you carefully.
+    endDialogue: 1
+    playerLine: 
     unlockBookAfterReply: 0
     requiredClueID: 
