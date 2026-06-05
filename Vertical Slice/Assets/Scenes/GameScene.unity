@@ -21387,10 +21387,10 @@ RectTransform:
   - {fileID: 1143366936}
   m_Father: {fileID: 1154711145}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8436667, y: 0.83100003}
-  m_AnchorMax: {x: 0.94425005, y: 0.95100003}
-  m_AnchoredPosition: {x: -356.5, y: -116}
-  m_SizeDelta: {x: 3, y: 28}
+  m_AnchorMin: {x: 0.80700004, y: 0.79433334}
+  m_AnchorMax: {x: 0.94500005, y: 0.9393334}
+  m_AnchoredPosition: {x: -338.5, y: -110.5}
+  m_SizeDelta: {x: -33, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &715490324
 PrefabInstance:
@@ -44522,7 +44522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"speed","value":{"$content":3.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mouseSensitivity","value":{"$content":30.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"mouseSensitivity","value":{"$content":25.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"cameraTransform","value":{"$content":0,"$type":"UnityEngine.Object"},"typeHandle":{"Identification":"UnityEngine.Transform,
       UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
