@@ -16,8 +16,7 @@ MonoBehaviour:
   - Exactly!
   - Your mother is a brilliant inventor, but that's exactly why some unsavoury characters
     are after her.
-  - Next, maybe you can find out more if you pay attention to the "glowing" items.
-    may find something important.
+  - 'Next, maybe you can find out more if you pay attention to the "glowing" items. '
   ReplyOptions:
   - line: Okay, thanks!
     nextNode: {fileID: 0}

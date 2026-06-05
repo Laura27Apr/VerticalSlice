@@ -18,7 +18,7 @@ MonoBehaviour:
   ReplyOptions:
   - line: My mom.
     nextNode: {fileID: 11400000, guid: d6c20b4cfbc56d4448385782e353fe2b, type: 2}
-    favorChange: 0
+    favorChange: 1
     requiredFavor: -10
     endDialogue: 0
     playerLine: 
@@ -26,7 +26,7 @@ MonoBehaviour:
     requiredClueID: 
   - line: The assistant.
     nextNode: {fileID: 11400000, guid: ef04a45e11b9ebc4d9be1cecbc421f18, type: 2}
-    favorChange: 0
+    favorChange: -1
     requiredFavor: -10
     endDialogue: 0
     playerLine: 

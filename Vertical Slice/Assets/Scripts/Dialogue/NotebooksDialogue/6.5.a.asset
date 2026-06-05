@@ -28,7 +28,7 @@ MonoBehaviour:
     requiredClueID: 
   - line: The assistant.
     nextNode: {fileID: 11400000, guid: 9009064f6daaccd4aa7472586b91e1c5, type: 2}
-    favorChange: 0
+    favorChange: 1
     requiredFavor: -10
     endDialogue: 0
     playerLine: 

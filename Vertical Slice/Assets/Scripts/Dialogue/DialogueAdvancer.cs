@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DialogueAdvancer : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class DialogueAdvancer : MonoBehaviour
     [Header("Other Systems")]
     [SerializeField] private NPCFollow npcFollow;
     [SerializeField] private GameObject gameController;
+    [SerializeField] private BookInteract bookInteract;
     [SerializeField] private GiftGroupInteract giftGroupInteract;
     [SerializeField] private NotebookInteract notebookInteract;
     [SerializeField] private AssistantNotebookInteract assistantNotebookInteract;
@@ -64,6 +66,8 @@ public class DialogueAdvancer : MonoBehaviour
     private bool hintDialogueFinished = false;
     private int defaultDialogueCount = 0;
 
+    private HashSet<string> readClues = new HashSet<string>();
+
     private void Start()
     {
         if (friendshipLevelUI != null)
@@ -79,12 +83,52 @@ public class DialogueAdvancer : MonoBehaviour
 
     private void Update()
     {
+        bool isReading = false;
+
+        if (Variables.ActiveScene.IsDefined("isReading"))
+        {
+            isReading = (bool)Variables.ActiveScene.Get("isReading");
+        }
+
+        if (isReading)
+        {
+            if (friendshipLevelUI != null)
+            {
+                friendshipLevelUI.SetActive(false);
+            }
+
+            return;
+        }
+
         if (!isInDialogue) return;
         if (isWaitingForReply) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             ShowCurrentLine();
+        }
+    }
+
+    public void HideFriendshipUI()
+    {
+        if (friendshipLevelUI != null)
+        {
+            friendshipLevelUI.SetActive(false);
+        }
+    }
+
+    public void ShowFriendshipUI()
+    {
+        bool isReading = false;
+
+        if (Variables.ActiveScene.IsDefined("isReading"))
+        {
+            isReading = (bool)Variables.ActiveScene.Get("isReading");
+        }
+
+        if (friendshipLevelUI != null && friendshipUIShown && !isReading)
+        {
+            friendshipLevelUI.SetActive(true);
         }
     }
 
@@ -171,12 +215,16 @@ public class DialogueAdvancer : MonoBehaviour
 
     public void MarkClueRead(string clueID)
     {
-        Debug.Log("Clue read: " + clueID);
+        if (!string.IsNullOrEmpty(clueID))
+        {
+            readClues.Add(clueID);
+            Debug.Log("Clue read: " + clueID);
+        }
     }
 
     private bool HasReadClue(string clueID)
     {
-        return true;
+        return string.IsNullOrEmpty(clueID) || readClues.Contains(clueID);
     }
 
     public void ShowCurrentLine()
@@ -254,6 +302,11 @@ public class DialogueAdvancer : MonoBehaviour
             if (assistantNotebookInteract != null)
             {
                 assistantNotebookInteract.UnlockOutline();
+            }
+
+            if (bookInteract != null)
+            {
+                bookInteract.ShowBookPrompt();
             }
 
             storyStage = 1;

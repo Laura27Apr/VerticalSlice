@@ -36,10 +36,15 @@ public class AssistantNotebookInteract : MonoBehaviour
 
         promptUI.SetActive(playerInRange && !readUI.activeSelf);
 
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (playerInRange && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
             readUI.SetActive(true);
             promptUI.SetActive(false);
+
+            if (DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.HideFriendshipUI();
+            }
 
             if (pageSwitcher != null)
             {
@@ -71,9 +76,19 @@ public class AssistantNotebookInteract : MonoBehaviour
         {
             readUI.SetActive(false);
 
+            if (DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.ShowFriendshipUI();
+            }
+
             Variables.ActiveScene.Set("isReading", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            if (playerInRange)
+            {
+                promptUI.SetActive(true);
+            }
         }
     }
 

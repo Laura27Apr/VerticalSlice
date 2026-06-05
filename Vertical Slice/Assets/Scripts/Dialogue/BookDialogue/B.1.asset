@@ -15,8 +15,6 @@ MonoBehaviour:
   Lines:
   - 'You''re so smart! '
   - Yes, it was her assistant.
-  - 'That''s exactly why I told you your mom is too kind and often gets taken advantage
-    of. '
   - Her assistant tried to use her position to steal your mom's research findings.
   - "What your mom didn\u2019t tell you is that this assistant was trying to use
     this technology to commit the perfect crime, because teleportation can create
@@ -25,7 +23,7 @@ MonoBehaviour:
     others, not to harm them.
   - So as soon as she discovered this, she immediately kicked the assistant out of
     the lab.
-  - But she was worried he might seek revenge on you, so she chose to leave you behind.
+  - But she was worried he might seek revenge on you, so she chose to leave you.
   ReplyOptions:
   - line: I feel so sad.
     nextNode: {fileID: 11400000, guid: 7f260a750da83a048b3244100e1193ef, type: 2}
@@ -34,3 +32,5 @@ MonoBehaviour:
     endDialogue: 0
     playerLine: I can't imagine how much pressure my mom must have been under when
       she made that decision.
+    unlockBookAfterReply: 0
+    requiredClueID: 

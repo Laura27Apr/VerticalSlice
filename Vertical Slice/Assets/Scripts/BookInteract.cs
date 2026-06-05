@@ -20,6 +20,7 @@ public class BookInteract : MonoBehaviour
     private bool canShowPrompt = false;
     private bool canReadBook = false;
     private bool bookAlreadyRead = false;
+    private bool lockedMessageOpen = false;
 
     private void Start()
     {
@@ -49,7 +50,33 @@ public class BookInteract : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         playerInteract = distance <= interactDistance;
 
-        promptUI.SetActive(canShowPrompt && playerInteract && !readUI.activeSelf);
+        promptUI.SetActive(canShowPrompt && playerInteract && !readUI.activeSelf && !lockedMessageOpen);
+
+        if (lockedMessageOpen && Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (lockedClueUI != null)
+            {
+                lockedClueUI.SetActive(false);
+            }
+
+            if (DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.ShowFriendshipUI();
+            }
+
+            lockedMessageOpen = false;
+
+            Variables.ActiveScene.Set("isReading", false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            if (canShowPrompt && playerInteract)
+            {
+                promptUI.SetActive(true);
+            }
+
+            return;
+        }
 
         if (canShowPrompt && playerInteract && promptUI.activeSelf && Input.GetKeyDown(KeyCode.F))
         {
@@ -60,6 +87,19 @@ public class BookInteract : MonoBehaviour
                     lockedClueUI.SetActive(true);
                 }
 
+                if (DialogueAdvancer._Instance != null)
+                {
+                    DialogueAdvancer._Instance.HideFriendshipUI();
+                }
+
+                lockedMessageOpen = true;
+
+                Variables.ActiveScene.Set("isReading", true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                promptUI.SetActive(false);
+
                 return;
             }
 
@@ -69,6 +109,11 @@ public class BookInteract : MonoBehaviour
             }
 
             readUI.SetActive(true);
+
+            if (DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.HideFriendshipUI();
+            }
 
             if (isLastClue && Music.Instance != null)
             {
@@ -92,7 +137,7 @@ public class BookInteract : MonoBehaviour
 
                 if (outlineTarget != null)
                 {
-                    SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(normalLayerName));
+                    SetLayer(outlineTarget, LayerMask.NameToLayer(normalLayerName));
                 }
             }
 
@@ -107,6 +152,11 @@ public class BookInteract : MonoBehaviour
         {
             readUI.SetActive(false);
 
+            if (DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.ShowFriendshipUI();
+            }
+
             Variables.ActiveScene.Set("isReading", false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -120,6 +170,12 @@ public class BookInteract : MonoBehaviour
         if (!playerInteract && lockedClueUI != null)
         {
             lockedClueUI.SetActive(false);
+            lockedMessageOpen = false;
+
+            if (!readUI.activeSelf && DialogueAdvancer._Instance != null)
+            {
+                DialogueAdvancer._Instance.ShowFriendshipUI();
+            }
         }
     }
 
@@ -130,6 +186,11 @@ public class BookInteract : MonoBehaviour
         if (fireObject != null)
         {
             fireObject.SetActive(true);
+        }
+
+        if (!bookAlreadyRead && outlineTarget != null)
+        {
+            SetLayer(outlineTarget, LayerMask.NameToLayer(outlineLayerName));
         }
     }
 
@@ -150,19 +211,14 @@ public class BookInteract : MonoBehaviour
 
         if (!bookAlreadyRead && outlineTarget != null)
         {
-            SetLayerRecursively(outlineTarget, LayerMask.NameToLayer(outlineLayerName));
+            SetLayer(outlineTarget, LayerMask.NameToLayer(outlineLayerName));
         }
     }
 
-    private void SetLayerRecursively(GameObject obj, int layer)
+    private void SetLayer(GameObject obj, int layer)
     {
         if (layer < 0) return;
 
         obj.layer = layer;
-
-        foreach (Transform child in obj.transform)
-        {
-            SetLayerRecursively(child.gameObject, layer);
-        }
     }
 }
